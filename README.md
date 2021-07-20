@@ -15,19 +15,20 @@
 ## Title Page
 
 <p align="center">
-    <img src="assets/nordtitledark.jpg" width="400" max-width="90%" alt="Background" />
+    <img src="assets/nordtitledark.jpg" width="45%" max-width="90%" alt="Background" /> <img src="assets/nordtitlelight.jpg" width="45%" max-width="90%" alt="Background" />
+
 </p>
 
 ## Color Palette
 
 <p align="center">
-    <img src="assets/nordcolorsdark.jpg" width="400" max-width="90%" alt="Background" />
+    <img src="assets/nordcolorsdark.jpg" width="400" max-width="90%" alt="Background" /> <img src="assets/nordcolorslight.jpg" width="400" max-width="90%" alt="Background" />
 </p>
 
 
 ## Block Environments
 
 <p align="center">
-    <img src="assets/nordblocksdark.jpg" width="400" max-width="90%" alt="Background" />
+    <img src="assets/nordblocksdark.jpg" width="400" max-width="90%" alt="Background" /> <img src="assets/nordblockslight.jpg" width="400" max-width="90%" alt="Background" />
 </p>
 
