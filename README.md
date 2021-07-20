@@ -1,7 +1,7 @@
 # sthlmBeamerTheme
-<a href = "https://www.sagemath.org">
+<a href = "https://raw.github.com/mholson/sthlmNordBeamerTheme/blob/main/sthlmNordTemplate.pdf">
         <img src="https://img.shields.io/badge/View-pdf-red.svg" /></a>
-        -
+        
         <img src="https://img.shields.io/badge/Compiler-XeLaTeX-blue.svg" />
     
 
