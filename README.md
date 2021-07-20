@@ -1,6 +1,9 @@
 # sthlmBeamerTheme
 
-## Beamer theme HEAVILY based on the hsrmbeamer theme
-<div style="text-align: center">
-<img src="https://github.com/mholson/sthlmNordBeamerTheme/blob/3ec06431c0705ed203e349370e09d4699c1e2e16/assets/nordsegel.jpg" width=50%>
-</div>
+<p align="center">
+    <img src="assets/nordsegel.jpg" width="400" max-width="90%" alt="Background" />
+</p>
+
+--
+  ![GitHub repo size](https://img.shields.io/github/repo-size/mholson/sthlmNordBeamerTheme)
+
