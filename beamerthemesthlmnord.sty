@@ -1,0 +1,555 @@
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+%             _             _
+%            | |           | |
+%  _ __ ___  | |__    ___  | | ___   ___   _ __       ___   ___   _ __ ___
+% | '_ ` _ \ | '_ \  / _ \ | |/ __| / _ \ | '_ \     / __| / _ \ | '_ ` _ \
+% | | | | | || | | || (_) || |\__ \| (_) || | | | _ | (__ | (_) || | | | | |
+% |_| |_| |_||_| |_| \___/ |_||___/ \___/ |_| |_|(_) \___| \___/ |_| |_| |_|
+%
+% File: beamerthemesthlmnord.sty
+% Author: Mark H. Olson
+% Website: https://mholson.com
+% Github: https://github.com/mholson
+%
+% Created: 2013-07-31
+% Version: 3.0
+%
+% Description: sthml Beamer Theme 1.0 was originally heavily based on the 
+% hsrmbeamer theme (Benjamin Weiss) as a pdfLaTeX alternative.
+%
+% This theme is now primart based on the work of
+% Copyright (c) 2018 by P. Vanberg 
+% https://github.com/pvanberg/flux-beamer
+%
+% GNU General Publick Liscense Extended to this work.
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You can find the GNU General Public License at <http://www.gnu.org/licenses/>.
+%
+% Important disclaimer from P. Vanberg regarding the original theme
+%
+% The "%" symbols inside hbox are all very important here.
+% The \hbox enviroment will insert spaces whenever there's whitespace
+% Adding a % at the END of each line ensures that any hard returns aren't
+% interpreted as white space. This allows the color boxes to be flush against
+% one another. If a faint white line appears one could probably do something like
+% hspace{-1px} and add an additional pixel-or-two wide beamercolorbox.	
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Theme Options   
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\ProvidesPackage{beamerthemesthlmnord}
+\mode<presentation>
+
+\newif\if@dosectionpages
+\@dosectionpagesfalse
+\DeclareOptionBeamer{sectionpages}{\@dosectionpagestrue}
+\DeclareOptionBeamer{mode}{\def\beamer@sthlmnordtheme@mode{#1}}
+\ExecuteOptionsBeamer{mode=dark} % Default Dark Mode
+\ProcessOptionsBeamer
+
+\def\beamer@sthlmnordtheme@darkmode{dark}%
+\def\beamer@sthlmnordtheme@lightmode{light}%
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Required Packages   
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\RequirePackage{tikz}
+\RequirePackage{ragged2e}
+\RequirePackage{metalogo}
+\RequirePackage{tabularray}
+\RequirePackage{currfile}
+\RequirePackage[yyyymmdd]{datetime}
+
+% > > > Fonts
+\RequirePackage{microtype}
+\RequirePackage{textcomp}
+\RequirePackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\RequirePackage{libertinus-otf}
+
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Color Theme   
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\RequirePackage{mhocolorthemenord}
+
+\ifx\beamer@sthlmnordtheme@mode\beamer@sthlmnordtheme@darkmode%
+
+% > > >  Global Definitions
+\setbeamercolor*{normal text}{fg=nordFive}
+\setbeamercolor*{background canvas}{bg=nordOne}
+\setbeamercolor*{structure}{fg=nordSix}
+
+% > > >  Title Page
+\setbeamercolor*{title}{fg=nordFour}
+\setbeamercolor*{subtitle}{fg=nordEight}
+
+\setbeamercolor*{author title}{fg=nordNine}
+\setbeamercolor*{author}{fg=nordNine!50}
+
+\setbeamercolor*{institute title}{fg=nordNine}
+\setbeamercolor*{institute}{fg=nordNine!50}
+
+% > > >  Text
+\setbeamercolor*{example text}{fg=nordSeven}
+\setbeamercolor*{alerted text}{fg=nordTwelve}
+%\setbeamercolor*{math text}{fg=nordFive}
+%\setbeamercolor*{normal text in math text}{fg=nordFive}
+
+% > > >  Footnotes
+\setbeamercolor*{footnotemark}{fg=nordNine}
+\setbeamercolor*{footnote}{fg=nordEight}
+
+% > > >  Frame Structure
+\setbeamercolor*{section in head/foot}{fg=nordFour, bg=nordOne}
+\setbeamercolor*{page number in head/foot}{fg=nordSix}
+\setbeamercolor*{number in head/foot}{fg=nordFour, bg=nordOne}
+
+\setbeamercolor*{header primary}{bg=nordZero}
+\setbeamercolor*{frame title}{fg=nordFour}
+\setbeamercolor*{frame subtitle}{fg=nordFour}
+\setbeamercolor*{frame mark}{fg=nordEight}
+
+\setbeamercolor*{footer}{fg=nordThree!50}
+\setbeamercolor*{footer text}{fg=nordThree}
+
+% > > >  Lists
+\setbeamercolor*{itemize item}{fg=nordNine}
+\setbeamercolor*{itemize subitem}{fg=nordEight}
+\setbeamercolor*{itemize subsubitem}{fg=nordSeven}
+\setbeamercolor*{enumerate item}{fg=nordNine}
+\setbeamercolor*{enumerate subitem}{fg=nordEight}
+\setbeamercolor*{enumerate subsubitem}{fg=nordSeven}
+\setbeamercolor*{description item}{fg=nordNine}
+
+% > > >  Figures
+\setbeamercolor*{caption name}{fg=nordFour}
+
+% > > >  Table of Contents
+\setbeamercolor*{section in toc}{fg=nordFour}
+\setbeamercolor*{subsection in toc}{fg=nordEight}
+
+% > > >  Section Page
+\setbeamercolor*{section page}{fg=nordFour}
+\setbeamercolor*{subsection page}{fg=nordFour}
+
+% > > >  Default block
+\setbeamercolor{block title}{bg=nordTen,fg=nordFour}%
+\setbeamercolor{block body}{bg=nordFour, fg=nordTwo}%
+%\setbeamercolor{block body math text}{fg=nordTwo}%
+%\setbeamercolor{block body normal text in math text}{fg=nordTwo}%
+\setbeamercolor{block title alerted}{bg=nordEleven, fg=nordFour}%
+\setbeamercolor{block body alerted}{bg=nordFour, fg=nordTwo}%
+\setbeamercolor{block title example}{bg=nordSeven, fg=nordFour}%
+\setbeamercolor{block body example}{bg=nordFour, fg=nordTwo}%
+
+% > > >  Bibliography
+\setbeamercolor*{bibliography entry author}{fg=nordFour}
+\setbeamercolor*{bibliography entry title}{fg=nordFour}
+\setbeamercolor*{bibliography entry location}{fg=nordFour}
+\setbeamercolor*{bibliography entry note}{fg=nordFour}
+
+\else%
+  \ifx\beamer@sthlmnordtheme@mode\beamer@sthlmnordtheme@lightmode%
+% > > >  Global Definitions
+\setbeamercolor*{normal text}{fg=nordZero}
+\setbeamercolor*{background canvas}{bg=nordSix}
+\setbeamercolor*{structure}{fg=nordZero}
+
+% > > >  Title Page
+\setbeamercolor*{title}{fg=nordTwo}
+\setbeamercolor*{subtitle}{fg=nordThree}
+
+\setbeamercolor*{author title}{fg=nordTen}
+\setbeamercolor*{author}{fg=nordNine}
+
+\setbeamercolor*{institute title}{fg=nordTen}
+\setbeamercolor*{institute}{fg=nordNine}
+
+% > > >  Text
+\setbeamercolor*{example text}{fg=nordSeven}
+\setbeamercolor*{alerted text}{fg=nordTwelve}
+
+% > > >  Footnotes
+\setbeamercolor*{footnotemark}{fg=nordNine}
+\setbeamercolor*{footnote}{fg=nordEight}
+
+% > > >  Frame Structure
+\setbeamercolor*{section in head/foot}{fg=nordFour, bg=nordOne}
+\setbeamercolor*{page number in head/foot}{fg=nordSix, bg=nordOne}
+\setbeamercolor*{number in head/foot}{fg=nordFour, bg=nordOne}
+
+\setbeamercolor*{header primary}{bg=nordZero}
+\setbeamercolor*{frame title}{fg=nordFour}
+\setbeamercolor*{frame subtitle}{fg=nordFour}
+\setbeamercolor*{frame mark}{fg=nordEight}
+
+\setbeamercolor*{footer}{fg=nordThree!50}
+\setbeamercolor*{footer text}{fg=nordThree}
+
+% > > >  Lists
+\setbeamercolor*{itemize item}{fg=nordNine}
+\setbeamercolor*{itemize subitem}{fg=nordEight}
+\setbeamercolor*{itemize subsubitem}{fg=nordSeven}
+\setbeamercolor*{enumerate item}{fg=nordZero}
+\setbeamercolor*{enumerate subitem}{fg=nordZero}
+\setbeamercolor*{enumerate subsubitem}{fg=nordZero}
+\setbeamercolor*{description item}{fg=nordZero}
+
+% > > >  Figures
+\setbeamercolor*{caption name}{fg=nordNine}
+
+% > > >  Table of Contents
+\setbeamercolor*{section in toc}{fg=nordTwo}
+\setbeamercolor*{subsection in toc}{fg=nordEight}
+
+% > > >  Section Page
+\setbeamercolor*{section page}{bg=nordSix,fg=nordTwo}
+\setbeamercolor*{subsection page}{bg=nordSix,fg=nordTwo}
+
+% > > >  Default block
+\setbeamercolor{block title}{bg=nordOne,fg=nordFive}%
+\setbeamercolor{block body}{bg=nordFive, fg=nordTwo}%
+\setbeamercolor{block title alerted}{bg=nordEleven, fg=nordFive}%
+\setbeamercolor{block body alerted}{bg=nordFive, fg=nordTwo}%
+\setbeamercolor{block title example}{bg=nordSeven, fg=nordFive}%
+\setbeamercolor{block body example}{bg=nordFive, fg=nordTwo}%
+
+% > > >  Bibliography
+\setbeamercolor*{bibliography entry author}{fg=nordFour}
+\setbeamercolor*{bibliography entry title}{fg=nordFour}
+\setbeamercolor*{bibliography entry location}{fg=nordFour}
+\setbeamercolor*{bibliography entry note}{fg=nordFour}
+  \else%
+    \PackageError{beamercolorthemesthlmNord}{Unknow style option `\beamer@sthlmnordtheme@mode`}{extra help}
+  \fi%
+\fi%
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Fonts
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%\usefonttheme{structurebold} % BF for titles and frametitle
+% > > > Whoa! Need a large font ... here it is!
+\newcommand\Massive{\@setfontsize\VeryHuge{90}{60}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+
+\setbeamerfont*{header title}{size=\large,series=\bfseries}
+\setbeamerfont*{header subtitle}{size=\normalsize}
+\setbeamerfont*{toc title}{size=\normalsize,series=\bfseries}
+\setbeamerfont*{toc subtitle}{size=\small}
+\setbeamerfont*{footnote}{size=\fontsize{6}{6}}
+\setbeamerfont*{bibliography entry author}{size=\normalsize,series=\normalfont}
+\setbeamerfont*{bibliography entry title}{size=\normalsize,series=\bfseries}
+\setbeamerfont*{bibliography entry location}{size=\small,series=\normalfont}
+\setbeamerfont*{bibliography entry note}{size=\small,series=\normalfont}
+\setbeamerfont*{block title}{size=\normalsize}
+\setbeamerfont*{block body}{size=\small}
+\setbeamerfont*{block title example}{size=\normalsize}
+\setbeamerfont*{block body example}{size=\small}
+\setbeamerfont*{block title alerted}{size=\normalsize}
+\setbeamerfont*{block body alerted}{size=\small}
+
+\setbeamerfont{title}{series=\scshape, size=\LARGE}
+\setbeamerfont{subtitle}{shape=\upshape}
+
+\setbeamerfont*{author title}{series=\bfseries, shape=\upshape, size=\footnotesize}
+\setbeamerfont*{author}{series=\normalfont, shape=\upshape, size=\footnotesize}
+
+\setbeamerfont*{institute title}{series=\bfseries, shape=\upshape, size=\footnotesize}
+\setbeamerfont*{institute}{series=\normalfont, shape=\upshape, size=\footnotesize}
+
+\setbeamerfont{date}{series=\bfseries, shape=\scshape}
+\setbeamerfont{section in head/foot}{shape=\upshape}
+\setbeamerfont{number in head/foot}{shape=\upshape}
+\setbeamerfont{section page}{series=\bfseries, shape=\upshape, size=\Large}
+\setbeamerfont{subsection page}{series=\bfseries, shape=\upshape, size=\normalsize}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Frame Header
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\setbeamertemplate{frametitle}
+{
+    \nointerlineskip
+    \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.2cm,ht=0.6cm,dp=0.25cm]{header primary}%
+        {\usebeamercolor*[fg]{frame title}\usebeamerfont{header title}\insertframetitle} 
+		\ifx\insertframesubtitle\empty
+		\else {\usebeamercolor*[fg]{frame mark}\,.::.\,}
+        {\usebeamercolor*[fg]{frame subtitle}\usebeamerfont{header subtitle}\insertframesubtitle} \fi
+        \hfill
+    \end{beamercolorbox}%
+    \nointerlineskip
+}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%  Frame Footer
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\setbeamertemplate{footline}{%
+  \hbox{%
+    \begin{beamercolorbox}[
+      wd=.9\paperwidth,
+      ht=2ex,
+      dp=1.75ex,
+      center]{section in head/foot}%
+      % > > > display priority: subsection > section > title
+      \texttt{\filename}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[
+      wd=.1\paperwidth,
+      ht=2ex,
+      dp=1.75ex,
+      center]{number in head/foot}
+      \insertframenumber\ /\ \inserttotalframenumber
+    \end{beamercolorbox}%
+  }
+}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Footnotes
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\hfuzz=\maxdimen % Remove warning hbox overfull (TODO) 
+\renewcommand\footnoterule{\color{nordThree!50}\hspace*{-0.5cm}\rule{0.95\paperwidth}{0.2pt}\vspace*{0.07cm}}
+\setbeamertemplate{footnote}{
+	\begin{beamercolorbox}[wd=\textwidth, leftskip=0.3cm,rightskip=0.3cm]{footer text}%
+	\usebeamerfont{footnote}{\usebeamercolor{footnotemark}\insertfootnotemark}{\usebeamercolor{footnotemark}\insertfootnotetext}
+	\end{beamercolorbox}%
+}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Deck Title Page
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\def\titlepage{\usebeamertemplate{title page}}
+\def\logo@width{0.1\paperwidth}
+\def\logo@height{0.1\paperheight}
+\tikzset{
+  sider/.style={
+    draw=none,
+    rectangle,
+    outer xsep=-0.1mm,
+    minimum height=\paperheight,
+    minimum width=\logo@width,
+    fill=nordZero
+  },
+  icon/.style={
+  	draw=nordZero,
+		line width=1.2pt,
+  	fill=nordTen, 
+  	minimum height=\logo@height,
+  	minimum width=\logo@width,
+  	text=nordFour,
+  	outer xsep=0.4cm,
+  	outer ysep=0.4cm,
+  	inner sep=0.1cm,
+  }
+}
+\setbeamertemplate{title page}
+{
+	\begin{frame}[plain]
+    	\begin{tikzpicture}[remember picture,overlay]
+    		\hspace*{-1pt}\node[anchor=west,sider] at (current page.west){};
+    		%\node[anchor=south west,sider, fill=primary, minimum height=0.95\paperheight] at (current page.south west){};
+			\node[align=left] at (current page.center){
+				{\usebeamerfont{title}\usebeamercolor*[fg]{title}\inserttitle}\\[0.3cm]
+				{\usebeamerfont{subtitle}\usebeamercolor*[fg]{subtitle}\insertsubtitle}\\[0.1cm]
+				
+				\usebeamercolor[fg]{footer}\rule{0.7\paperwidth}{0.2pt}	\\[0.35cm]
+				
+				{\usebeamerfont{author title}\usebeamercolor*[fg]{author title}Created by: {\usebeamerfont{author}\usebeamercolor*[fg]{author}\insertauthor}}\\[0.3cm]
+				{\usebeamerfont{institute title}\usebeamercolor*[fg]{institute title}Institute: {\usebeamerfont{institute}\usebeamercolor*[fg]{institute}\insertinstitute}}\\[0.3cm]
+				{\usebeamerfont{institute title}\usebeamercolor*[fg]{institute title}Course: {\usebeamerfont{institute}\usebeamercolor*[fg]{institute}\course}}\\[0.3cm]
+				{\usebeamerfont{institute title}\usebeamercolor*[fg]{institute title}File: {\usebeamerfont{institute}\usebeamercolor*[fg]{institute}\filename}}\\[0.3cm]
+				%\usebeamerfont{author}\small{FileID: \color{nordTen}\fileid} 
+			 %\includegraphics[width=\logo@width, height=\logo@height, keepaspectratio]{assets/titlelogo}
+			};
+			\node[anchor=south,outer ysep=0.4cm] at (current page.south){\small\color{nordThree!90} \XeLaTeX ed on \insertdate};
+			%\node[anchor=south east,icon] at (current page.south east)(logo){\includegraphics[width=\logo@width, height=\logo@height, keepaspectratio]{\inserttitlegraphic}};
+			\node[anchor=south east] at (current page.south east)(logo){\includegraphics[width=\logo@width, height=\logo@height, keepaspectratio]{\inserttitlegraphic}};
+		\end{tikzpicture}
+	\end{frame}
+}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Section Frame
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\if@dosectionpages
+
+\AtBeginSection[]{
+  \begin{frame}[plain,noframenumbering]
+    \vfill
+    \center
+    \usebeamerfont{section page}
+    \usebeamercolor[fg]{section page}
+    \insertsectionhead
+    \par
+    \vfill
+  \end{frame}
+}
+\AtBeginSubsection[]{
+  \begin{frame}[plain,noframenumbering]
+    \vfill
+    \center
+    \usebeamerfont{section page}
+    \usebeamercolor[fg]{section page}
+    \insertsectionhead
+    \par%
+    \usebeamerfont{subsection page}
+    \usebeamercolor[fg]{subsection page}
+    \insertsubsectionhead
+    \par%
+    \vfill
+  \end{frame}
+}
+\else
+\fi
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Table of Contents
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\setbeamertemplate{section in toc}[cirlce unnumbered]
+\setbeamertemplate{subsection in toc}[box unnumbered]
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Itemizized Environments
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\setbeamertemplate{itemize item}{$\circledcirc$}
+\setbeamertemplate{itemize subitem}{$\bullet$}
+\setbeamertemplate{itemize subsubitem}{$\bullet$}
+\setlength{\parskip}{0.5em}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Example Environment
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\renewenvironment{example}[1]{
+	\textcolor{secondary}{#1}
+}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%  Blocks
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% > > > Normal Block
+\setbeamertemplate{block begin}
+{
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=2mm]{block title}
+    \usebeamerfont*{block title}\insertblocktitle%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{block title}
+  {}
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[colsep*=2mm,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+% > > > Example Block
+\setbeamertemplate{block example begin}
+{
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=2mm]{block title example}
+    \usebeamerfont*{block title example}\insertblocktitle%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{block title example}
+  {}
+  {\ifbeamercolorempty[bg]{block body example}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body example}%
+  \begin{beamercolorbox}[colsep*=2mm,vmode]{block body example}%
+    \ifbeamercolorempty[bg]{block body example}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+% > > > Alert Block
+\setbeamertemplate{block alerted begin}
+{
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=2mm]{block title alerted}
+    \usebeamerfont*{block title alerted}\insertblocktitle%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{block title alerted}
+  {}
+  {\ifbeamercolorempty[bg]{block body alerted}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body alerted}%
+  \begin{beamercolorbox}[colsep*=2mm,vmode]{block body alerted}%
+    \ifbeamercolorempty[bg]{block body alerted}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Math Environments
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\newcommand{\prob}{\cnordEight{\faThLarge \, Problem: \enskip}}
+\newcommand{\soln}{\cnordEight{\faTh \, Solution: \enskip}}
+\newcommand{\an}{\cnordEight{\faTh \, Answer: \enskip}}
+\newcommand{\ans}{\cnordEight{\faTh \, Answers: \enskip}}
+\renewcommand{\proof}{\cnordTen{\faTh \, Proof: \enskip}}
+\newcommand{\yt}[1]{\cnordTen{\Large\faYoutubeSquare \footnote{#1}}}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Bibliography
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\setbeamertemplate{bibliography item}{
+ 	\usebeamercolor[bg]{secondary}\insertbiblabel
+}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Hide navigation buttons
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\setbeamertemplate{navigation symbols}{} 
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Custom Margins
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\mode<all>
+
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+% End of file `beamerthemesthlmnord.sty'.
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=

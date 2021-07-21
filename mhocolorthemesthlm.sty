@@ -1,0 +1,223 @@
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+%             _             _
+%            | |           | |
+%  _ __ ___  | |__    ___  | | ___   ___   _ __       ___   ___   _ __ ___
+% | '_ ` _ \ | '_ \  / _ \ | |/ __| / _ \ | '_ \     / __| / _ \ | '_ ` _ \
+% | | | | | || | | || (_) || |\__ \| (_) || | | | _ | (__ | (_) || | | | | |
+% |_| |_| |_||_| |_| \___/ |_||___/ \___/ |_| |_|(_) \___| \___/ |_| |_| |_|
+%
+% File: sthlmcolor.sty
+% Author: Mark H. Olson
+% Website: https://mholson.com
+% Github: https://github.com/mholson
+%
+% Created: 2017-04-12
+%
+% Description: TODO
+%
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+
+
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	PACKAGE OPTIONS & SETUP
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mhocolorthemesthlm}
+    [2017/04/12 A small package for sthlm color import]
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	STOCKHOLM COLOR THEME DEFINITIONS
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+% >>> BLUE
+
+    \definecolor{sthlmLightBlue}{HTML}{cae5ff}
+        \newcommand{\csthlmLightBlue}[1]{{\color{sthlmLightBlue}{#1}}}
+    
+	\definecolor{sthlmBlue}{HTML}{006ebf}
+        \newcommand{\csthlmBlue}[1]{{\color{sthlmBlue}{#1}}}
+    
+	\definecolor{sthlmLinkBlue}{HTML}{0664aa}
+        \newcommand{\csthlmLinkBlue}[1]{{\color{sthlmLinkBlue}{#1}}}
+    
+	\definecolor{pythonBlue}{HTML}{1919b3} 
+        \newcommand{\cspytonBlue}[1]{{\color{pythonBlue}{#1}}}  
+
+% >>> GREEN
+
+    \definecolor{sthlmLightGreen}{HTML}{c2eee7}
+        \newcommand{\csthlmLightGreen}[1]{{\color{sthlmLightGreen}{#1}}}
+    
+	\definecolor{sthlmGreen}{HTML}{00837c}
+        \newcommand{\csthlmGreen}[1]{{\color{sthlmGreen}{#1}}}
+    
+	\definecolor{sthlmPrimaryLightGreen}{HTML}{66939c}
+        \newcommand{\csthlmPrimaryLightGreen}[1]{{\color{sthlmPrimaryLightGreen}{#1}}}
+    
+	\definecolor{sthlmPrimaryGreen}{HTML}{004b5a}
+        \newcommand{\csthlmPrimaryGreen}[1]{{\color{sthlmPrimaryGreen}{#1}}}
+		
+% >>> GREY
+
+    \definecolor{sthlmBGGrey}{HTML}{f5f3ee}
+        \newcommand{\csthlmBGGrey}[1]{{\color{sthlmBGGrey}{#1}}}
+    
+	\definecolor{sthlmDivGrey}{HTML}{c9c6c0}
+        \newcommand{\csthlmDivGrey}[1]{{\color{sthlmDivGrey}{#1}}}
+    
+	\definecolor{sthlmLightGrey}{HTML}{e5e2db}
+        \newcommand{\csthlmLightGrey}[1]{{\color{sthlmLightGrey}{#1}}}
+    
+	\definecolor{sthlmGrey}{HTML}{5d5c58}
+        \newcommand{\csthlmGrey}[1]{{\color{sthlmGrey}{#1}}}
+    
+	\definecolor{sthlmDarkGrey}{HTML}{333333}
+        \newcommand{\csthlmDarkGrey}[1]{{\color{sthlmDarkGrey}{#1}}}
+	
+	\definecolor{sthlmBlack}{HTML}{1b1b1b}
+		\newcommand{\csthlmBlack}[1]{{\color{sthlmBlack}{#1}}}
+
+% >>> ORANGE
+
+    \definecolor{sthlmLightOrange}{HTML}{ffc89f}
+        \newcommand{\csthlmLightOrange}[1]{{\color{sthlmLightOrange}{#1}}}
+    
+	\definecolor{sthlmOrange}{HTML}{c9472d}
+        \newcommand{\csthlmOrange}[1]{{\color{sthlmOrange}{#1}}}
+		
+% >>> YELLOW
+
+    \definecolor{sthlmYellow}{HTML}{fcbf0a}
+        \newcommand{\csthlmYellow}[1]{{\color{sthlmYellow}{#1}}}
+
+% >>> PURPLE
+
+    \definecolor{sthlmLightPurple}{HTML}{ebd6f2}
+        \newcommand{\csthlmLightPurple}[1]{{\color{sthlmLightPurple}{#1}}}
+    
+	\definecolor{sthlmPurple}{HTML}{5d237d} 
+        \newcommand{\csthlmPurple}[1]{{\color{sthlmPurple}{#1}}}
+
+% >>> RED
+       
+    \definecolor{sthlmLightRed}{HTML}{fdbbd9}
+        \newcommand{\csthlmLightRed}[1]{{\color{sthlmLightRed}{#1}}}
+    
+	\definecolor{sthlmRed}{HTML}{c40064}
+        \newcommand{\csthlmRed}[1]{{\color{sthlmRed}{#1}}}
+    
+	\definecolor{sthlmDarkRed}{HTML}{dd1f26}
+        \newcommand{\csthlmDarkRed}[1]{{\color{sthlmDarkRed}{#1}}}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   GLOBAL COLOR COMMANDS
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+% >>> BLUE
+
+    \newcommand{\cLightBlue}[1]{{\color{sthlmLightBlue}{#1}}}
+    \newcommand{\crLightBlue}{\color{sthlmLightBlue}}
+    \newcommand{\cnLightBlue}{sthlmLightBlue}
+	
+    \newcommand{\cLinkBlue}[1]{{\color{sthlmLinkBlue}{#1}}}
+    \newcommand{\crLinkBlue}{\color{sthlmLinkBlue}}
+    \newcommand{\cnLinkBlue}{sthlmLinkBlue}
+	
+    \newcommand{\cBlue}[1]{{\color{sthlmBlue}{#1}}}
+    \newcommand{\crBlue}{\color{sthlmBlue}}
+    \newcommand{\cnBlue}{sthlmBlue}
+	
+    \newcommand{\cPythonBlue}[1]{{\color{pythonBlue}{#1}}}
+    \newcommand{\crPythonBlue}{\color{pythonBlue}}
+    \newcommand{\cnPythonBlue}{pythonBlue}
+
+% >>> GREEN
+
+    \newcommand{\cLightGreen}[1]{{\color{sthlmLightGreen}{#1}}}
+    \newcommand{\crLightGreen}{\color{sthlmLightGreen}}
+    \newcommand{\cnLightGreen}{sthlmLightGreen}
+	
+    \newcommand{\cGreen}[1]{{\color{sthlmGreen}{#1}}}
+    \newcommand{\crGreen}{\color{sthlmGreen}}
+    \newcommand{\cnGreen}{sthlmGreen}
+	
+    \newcommand{\cPrimaryLightGreen}[1]{{\color{sthlmPrimaryLightGreen}{#1}}}
+    \newcommand{\crPrimaryLightGreen}{\color{sthlmPrimaryLightGreen}}
+    \newcommand{\cnPrimaryLightGreen}{sthlmPrimaryLightGreen}
+	
+    \newcommand{\cPrimaryGreen}[1]{{\color{sthlmPrimaryGreen}{#1}}}
+    \newcommand{\crPrimaryGreen}{\color{sthlmPrimaryGreen}}
+    \newcommand{\cnPrimaryGreen}{sthlmPrimaryGreen}
+	
+% >>> YELLOW
+
+    \newcommand{\cYellow}[1]{{\color{sthlmYellow}{#1}}}
+    \newcommand{\crYellow}{\color{sthlmYellow}}
+    \newcommand{\cnYellow}{sthlmYellow}
+
+% >>> GREY
+
+    \newcommand{\cLightGrey}[1]{{\color{sthlmLightGrey}{#1}}}
+    \newcommand{\crLightGrey}{\color{sthlmLightGrey}}
+    \newcommand{\cnLightGrey}{sthlmLightGrey}
+	
+    \newcommand{\cDivGrey}[1]{{\color{sthlmDivGrey}{#1}}}
+    \newcommand{\crDivGrey}{\color{sthlmDivGrey}}
+    \newcommand{\cnDivGrey}{sthlmDivGrey}
+	
+    \newcommand{\cBGGrey}[1]{{\color{sthlmBGGrey}{#1}}}
+    \newcommand{\crBGGrey}{\color{sthlmBGGrey}}
+    \newcommand{\cnBGGrey}{sthlmBGGrey}
+	
+    \newcommand{\cGrey}[1]{{\color{sthlmGrey}{#1}}}
+    \newcommand{\crGrey}{\color{sthlmGrey}}
+    \newcommand{\cnGrey}{sthlmGrey}
+	
+    \newcommand{\cDarkGrey}[1]{{\color{sthlmDarkGrey}{#1}}}
+    \newcommand{\crDarkGrey}{\color{sthlmDarkGrey}}
+    \newcommand{\cnDarkGrey}{sthlmDarkGrey}
+	
+    \newcommand{\cBlack}[1]{{\color{sthlmBlack}{#1}}}
+    \newcommand{\crBlack}{\color{sthlmBlack}}
+    \newcommand{\cnBlack}{sthlmBlack}
+
+% >>> ORANGE
+
+    \newcommand{\cLightOrange}[1]{{\color{sthlmLightOrange}{#1}}}
+    \newcommand{\crLightOrange}{\color{sthlmLightOrange}}
+    \newcommand{\cnLightOrange}{sthlmLightOrange}
+	
+    \newcommand{\cOrange}[1]{{\color{sthlmOrange}{#1}}}
+    \newcommand{\crOrange}{\color{sthlmOrange}}
+    \newcommand{\cnOrange}{sthlmOrange}
+
+% >>> PURPLE
+
+    \newcommand{\cLightPurple}[1]{{\color{sthlmLightPurple}{#1}}}
+    \newcommand{\crLightPurple}{\color{sthlmLightPurple}}
+    \newcommand{\cnLightPurple}{sthlmLightPurple}
+	
+    \newcommand{\cPurple}[1]{{\color{sthlmPurple}{#1}}}
+    \newcommand{\crPurple}{\color{sthlmPurple}}
+    \newcommand{\cnPurple}{sthlmPurple}
+
+% >>> RED
+
+    \newcommand{\cLightRed}[1]{{\color{sthlmLightRed}{#1}}}
+    \newcommand{\crLightRed}{\color{sthlmLightRed}}
+    \newcommand{\cnLightRed}{sthlmLightRed}
+	
+    \newcommand{\cRed}[1]{{\color{sthlmRed}{#1}}}
+    \newcommand{\crRed}{\color{sthlmRed}}
+    \newcommand{\cnRed}{sthlmRed}
+	
+    \newcommand{\cDarkRed}[1]{{\color{sthlmDarkRed}{#1}}}
+    \newcommand{\crDarkRed}{\color{sthlmDarkRed}}
+    \newcommand{\cnDarkRed}{sthlmDarkRed}
+
+\endinput
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+% End of file `sthlmcolors.sty'.
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
