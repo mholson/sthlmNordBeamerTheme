@@ -247,6 +247,17 @@
 \setbeamercolor*{bibliography entry title}{fg=nordFour}
 \setbeamercolor*{bibliography entry location}{fg=nordFour}
 \setbeamercolor*{bibliography entry note}{fg=nordFour}
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Math Environments
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\newcommand{\prob}{\cnordTen{\faThLarge \, Problem: \enskip}}
+\newcommand{\soln}{\cnordTen{\faTh \, Solution: \enskip}}
+\newcommand{\an}{\cnordTen{\faTh \, Answer: \enskip}}
+\newcommand{\ans}{\cnordTen{\faTh \, Answers: \enskip}}
+\renewcommand{\proof}{\cnordTen{\faTh \, Proof: \enskip}}
+\newcommand{\yt}[1]{\cnordTen{\Large\faYoutubeSquare \footnote{#1}}}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   \else%
     \PackageError{beamercolorthemesthlmNord}{Unknow style option `\beamer@sthlmnordtheme@mode`}{extra help}
   \fi%
@@ -525,17 +536,6 @@
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%   Math Environments
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\newcommand{\prob}{\cnordEight{\faThLarge \, Problem: \enskip}}
-\newcommand{\soln}{\cnordEight{\faTh \, Solution: \enskip}}
-\newcommand{\an}{\cnordEight{\faTh \, Answer: \enskip}}
-\newcommand{\ans}{\cnordEight{\faTh \, Answers: \enskip}}
-\renewcommand{\proof}{\cnordTen{\faTh \, Proof: \enskip}}
-\newcommand{\yt}[1]{\cnordTen{\Large\faYoutubeSquare \footnote{#1}}}
-%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   Bibliography
