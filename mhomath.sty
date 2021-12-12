@@ -57,6 +57,12 @@
         \node[circle,draw,inner sep=1pt] (char) {\textsf{#1}};%
 \end{tikzpicture}}
 
+% > > > Circled character (used for referencing characteristics of plots)
+\newcommand\swed{
+    \begin{tikzpicture}[baseline=(char.base)]%
+        \node[circle,draw,inner sep=1pt,color=nordTen, fill=nordTen] (char) {\cYellow{\textsf{SV}}};%
+\end{tikzpicture}}
+
 
 % > > > Shorter Commands
 \newcommand{\ds}{\displaystyle}
