@@ -72,16 +72,6 @@
 \RequirePackage{currfile}
 \RequirePackage[yyyymmdd]{datetime}
 
-% > > > Fonts
-\RequirePackage{microtype}
-\RequirePackage{textcomp}
-\RequirePackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
-\RequirePackage{libertinus-otf}
-
-%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-
 
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   Color Theme   
@@ -164,10 +154,7 @@
 \setbeamercolor*{bibliography entry location}{fg=nordFour}
 \setbeamercolor*{bibliography entry note}{fg=nordFour}
 
-
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%   Math Environments
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% > > > Math Environments
 \newcommand{\prob}{\cnordEight{\faThLarge \, Problem: \enskip}}
 \newcommand{\soln}{\cnordEight{\faTh \, Solution: \enskip}}
 \newcommand{\an}{\cnordEight{\faTh \, Answer: \enskip}}
@@ -247,9 +234,8 @@
 \setbeamercolor*{bibliography entry title}{fg=nordFour}
 \setbeamercolor*{bibliography entry location}{fg=nordFour}
 \setbeamercolor*{bibliography entry note}{fg=nordFour}
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%   Math Environments
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+% > > > Math Environments 
 \newcommand{\prob}{\cnordTen{\faThLarge \, Problem: \enskip}}
 \newcommand{\soln}{\cnordTen{\faTh \, Solution: \enskip}}
 \newcommand{\an}{\cnordTen{\faTh \, Answer: \enskip}}
@@ -258,19 +244,31 @@
 \newcommand{\yt}[1]{\cnordTen{\Large\faYoutubeSquare \footnote{#1}}}
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-  \else%
-    \PackageError{beamercolorthemesthlmNord}{Unknow style option `\beamer@sthlmnordtheme@mode`}{extra help}
-  \fi%
+
+\else%
+\PackageError{beamercolorthemesthlmNord}{Unknow style option `\beamer@sthlmnordtheme@mode`}{extra help}
+\fi%
 \fi%
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%   Fonts
+%   Mathematics 
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%\usefonttheme{structurebold} % BF for titles and frametitle
+
+\RequirePackage{mhomath}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FONTS
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\RequirePackage{microtype}
+\RequirePackage{textcomp}
+
 % > > > Whoa! Need a large font ... here it is!
 \newcommand\Massive{\@setfontsize\VeryHuge{90}{60}}
+\RequirePackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\RequirePackage{libertinus-otf}
+
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex}

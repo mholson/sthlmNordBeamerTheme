@@ -28,8 +28,12 @@
 
 % > > > Load Packages
 \let\openbox\relax
-\RequirePackage{mathtools}              % Extending and including AMSmath
 \RequirePackage{amssymb}                % More symbols
+% > > > Mathtools xelatex underbrace fix PART I
+%\let\normalunderbrace=\underbrace
+\RequirePackage{mathtools}              % Extending and including AMSmath
+% > > > Mathtools xelatex underbrace fix PART II
+%\let\underbrace=\normalunderbrace
 \RequirePackage{siunitx}                % Proper typesetting of units
 \RequirePackage{calc}                   % Simple arithmetic in latex commands
 \RequirePackage{cancel}                 % Cancel a given value to a new value
