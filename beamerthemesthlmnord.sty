@@ -72,6 +72,20 @@
 \RequirePackage{currfile}
 \RequirePackage[yyyymmdd]{datetime}
 
+\newenvironment{EnvUplevel}
+  {\par\bigskip\vbox\bgroup
+    % We set \leftskip to provide the correct left margin for whatever
+    % is inside of the environment:
+    \leftskip=\@totalleftmargin
+    \advance\leftskip-\leftmargin
+    % We adjust \@totalleftmargin (and linewidth?) in case there's a
+    % solution environment inside of the environment:
+    \advance\@totalleftmargin-\leftmargin
+    \advance\linewidth\leftmargin
+  }
+  {\egroup\nobreak}
+
+
 
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   Color Theme   
