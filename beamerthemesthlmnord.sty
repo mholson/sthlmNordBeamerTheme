@@ -370,14 +370,14 @@
       dp=1.75ex,
       center]{section in head/foot}%
       % > > > display priority: subsection > section > title
-      \texttt{\filename}
+      \usebeamerfont{section in head/foot}\texttt{\filename}
     \end{beamercolorbox}%
     \begin{beamercolorbox}[
       wd=.1\paperwidth,
       ht=2ex,
       dp=1.75ex,
       center]{number in head/foot}
-      \insertframenumber\ /\ \inserttotalframenumber
+     \usebeamerfont{page number in head/foot} \insertframenumber\ /\ \inserttotalframenumber
     \end{beamercolorbox}%
   }
 }
