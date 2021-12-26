@@ -273,6 +273,23 @@
 \RequirePackage{mhomath}
 
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Enumerated Lists
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ \RequirePackage[shortlabels]{enumitem}
+ %\setlist{noitemsep}
+ \setlist[1]{labelindent=\parindent} % < Usually a good idea
+ \setlist[itemize]{leftmargin=*}
+ \setlist[itemize,1]{label=$\triangleleft$}
+ \setlist[enumerate]{labelsep=*, leftmargin=1.5pc}
+ %\setlist[enumerate,1]{label = \arabic*.,
+ %                      ref   = \arabic*}
+ \setlist[enumerate,1]{label = (\emph{\cRed{\alph*}}),
+                       ref   = \theenumi.\emph{\alph*}}
+ \setlist[enumerate,2]{label = \cRed{\roman*}),
+                       ref   = \theenumii.\roman*}
+ \setlist[description]{font=\sffamily\bfseries}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   FONTS
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \RequirePackage{microtype}
