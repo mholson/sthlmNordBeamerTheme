@@ -19,16 +19,83 @@
 
 </p>
 
-## Color Palette
+## Major Features
+
+<p align="center">
+    <img src="images/dark/Page 06.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 06.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+## Nord Color Palette
 
 <p align="center">
     <img src="images/dark/Page 13.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 13.png" width="45%" max-width="90%" alt="Background" />
 </p>
 
+<p align="center">
+    <img src="images/dark/Page 14.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 14.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+<p align="center">
+    <img src="images/dark/Page 15.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 15.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+<p align="center">
+    <img src="images/dark/Page 17.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 17.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+
 
 ## Block Environments
 
 <p align="center">
-    <img src="assets/nordblocksdark.jpg" width="400" max-width="90%" alt="Background" /> <img src="assets/nordblockslight.jpg" width="400" max-width="90%" alt="Background" />
+    <img src="images/dark/Page 19.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 19.png" width="45%" max-width="90%" alt="Background" />
 </p>
+
+
+## Lists
+
+<p align="center">
+    <img src="images/dark/Page 20.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 20.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+<p align="center">
+    <img src="images/dark/Page 21.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 21.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+<p align="center">
+    <img src="images/dark/Page 22.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 22.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+
+## Code Source powered by Minted
+
+<p align="center">
+    <img src="images/dark/Page 24.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 24.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+
+## Libertinus fonts compiled with XeLaTeX
+
+<p align="center">
+    <img src="images/dark/Page 28.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 28.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+## Mathematics
+
+<p align="center">
+    <img src="images/dark/Page 30.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 30.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+<p align="center">
+    <img src="images/dark/Page 31.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 31.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+<p align="center">
+    <img src="images/dark/Page 32.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 33.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
+<p align="center">
+    <img src="images/dark/Page 33.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 33.png" width="45%" max-width="90%" alt="Background" />
+</p>
+
 
