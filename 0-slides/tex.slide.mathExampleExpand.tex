@@ -1,0 +1,27 @@
+\documentclass[\string~/GitHub/sthlmNordBeamerTheme/sthlmNordLightDemo.tex]{subfiles}
+
+\begin{document}
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}[allowframebreaks, allowdisplaybreaks, t]{Example}{Expand \& Simplify}
+
+	\prob Expand and simplify \( 2(x - 3)^2 - 3(x + 1)^2 \).
+
+	\mref{oxfordIGCSEext5th-C02-S04-E11-Q24\cite{raynerCompleteMathematicsCambridge2018}\index{oxfordIGCSEext5th-C02!S04-E11-Q24}}
+
+	\framebreak
+	\soln \hfill
+	\begin{align*}
+		2(x - 3)^2 - 3(x + 1)^2 & = 2(x + \oneg  3)^2 + \oneg  3(x + 1)^2                                                                                              \\
+		                        & = \cRed{2}\sqpar{(x + \oneg 3)(x + \oneg 3)} + \cDarkBlue{ \oneg 3}\sqpar{(x + 1)(x + 1)}                                            \\
+		                        & = \cRed{2}\sqpar{x^2 + \oneg 6x + 9} + \cDarkBlue{ \oneg 3} \sqpar{x^2 + 2x + 1}                                                     \\
+		                        & = \cRed{2}(x^2) + \cRed{2}( \oneg 6x) + \cRed{2}(9) + \cDarkBlue{ \oneg 3}(x^2) + \cDarkBlue{ \oneg 3}(2x) + \cDarkBlue{ \oneg 3}(1) \\
+		                        & = 2x^2 + \oneg 12x + 18 + \oneg 3x^2 + \oneg 6x + \oneg 3                                                                            \\
+		                        & = 2x^2 + \oneg 3x^2 + \oneg 12x + \oneg 3x + 18 + \oneg 3                                                                            \\
+		                        & = \oneg 1x^2 + \oneg 18x + 15                                                                                                        \\
+		                        & = \oneg x^2 - 18x + 15
+	\end{align*}
+\end{frame}
+%   FRAME END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\end{document}

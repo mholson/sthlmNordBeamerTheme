@@ -1,0 +1,28 @@
+\documentclass[\string~/GitHub/sthlmNordBeamerTheme/sthlmNordLightDemo.tex]{subfiles}
+
+\begin{document}
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}[fragile]{Itemized Lists}
+	\begin{itemize}
+		\item \lipsum[1][1]
+		\item \lipsum[1][2]
+		      \begin{itemize}
+			      \item \lipsum[2][1]
+			            \begin{itemize}
+				            \item \lipsum[3][1]
+				            \item \lipsum[1][2]
+			            \end{itemize}
+			      \item \lipsum[2][2]
+		      \end{itemize}
+		\item \lipsum[1][3]
+		\item \lipsum[1][4]
+	\end{itemize}
+
+	\remarks This theme does not support more than three levels of itemized
+	items; however, this could easily be expanded in the style file.
+
+\end{frame}
+%   FRAME END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\end{document}
