@@ -1,0 +1,356 @@
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+%             _             _
+%            | |           | |
+%  _ __ ___  | |__    ___  | | ___   ___   _ __       ___   ___   _ __ ___
+% | '_ ` _ \ | '_ \  / _ \ | |/ __| / _ \ | '_ \     / __| / _ \ | '_ ` _ \
+% | | | | | || | | || (_) || |\__ \| (_) || | | | _ | (__ | (_) || | | | | |
+% |_| |_| |_||_| |_| \___/ |_||___/ \___/ |_| |_|(_) \___| \___/ |_| |_| |_|
+%
+% Author: Mark H. Olson
+% Website: https://mholson.com
+% Github: https://github.com/mholson
+% 
+% File: mhomacros.sty
+% Created: 2017-01-18
+% Updated: 2021-05-23
+%
+% Description: Custom style file to import math specific packages and custom
+% defined commands to simplify writting mathematical expressions across
+% all my projects. 
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	PACKAGE OPTIONS & SETUP
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mhomacros}[2017/04/12 A small package for Math customizations]
+
+% > > > Load Packages
+\let\openbox\relax
+\RequirePackage{amssymb}                % More symbols
+% > > > Mathtools xelatex underbrace fix PART I
+%\let\normalunderbrace=\underbrace
+\RequirePackage{mathtools}              % Extending and including AMSmath
+% > > > Mathtools xelatex underbrace fix PART II
+%\let\underbrace=\normalunderbrace
+\RequirePackage{siunitx}                % Proper typesetting of units
+\RequirePackage{calc}                   % Simple arithmetic in latex commands
+\RequirePackage{cancel}                 % Cancel a given value to a new value
+\RequirePackage{cases}                  % Produce multicase equations
+\RequirePackage{fontawesome5}           % More symbols
+\RequirePackage[ISO]{diffcoeff}         % Easily typeset differentials
+\RequirePackage[nointegrals]{wasysym}   % Mostly used for the section, euro
+                                        % box and cent symbols.  nointegrals 
+                                        % option to not conflict with amsmath
+%\RequirePackage{polynom}               % Polynomial Division
+\RequirePackage{xfrac}                  % More control over fraction displays
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	GLOBAL MATH 
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% > > > Circled character (used for referencing characteristics of plots)
+\newcommand\circled[1]{
+    \begin{tikzpicture}[baseline=(char.base)]%
+        \node[circle,draw,inner sep=1pt](char){\textsf{#1}};%
+\end{tikzpicture}}
+
+% > > > Circled character (used for referencing characteristics of plots)
+\newcommand\swed{
+    \begin{tikzpicture}[baseline=(char.base)]%
+        \node[circle,draw,inner sep=1pt,color=nordTen, fill=nordTen] (char) {\cYellow{\textsf{SV}}};%
+\end{tikzpicture} \,}
+
+%  > > > Custom Exam Solution Numbering
+\newcommand{\ibqn}[1]{(\textit{\textbf{\cRed{#1}}})}
+
+% > > > Custom Citation
+\newcommand{\mref}[1]{{\small\begin{flushright}\cDarkBlue{#1} \, \cDarkBlue{\faBook}\end{flushright}}}
+\newcommand{\yt}[1]{\small\begin{flushright} \cRed{\url{#1}} \, \cRed{\faYoutubeSquare}\end{flushright}}
+\newcommand{\colab}[1]{\small\begin{flushright} \cOrange{\href{#1}{Google Colab Python Notebook}} \, \cOrange{\faInfinity}\end{flushright}}
+
+% > > > Shorter Commands
+\newcommand{\ds}{\displaystyle}
+
+% > > > Question parts for slides and notes
+\newcommand{\cpart}[1]{\cPrimaryLightGreen{part(#1)}}
+
+% > > > Units
+%\newcommand{\unit}[1]{\ensuremath{\, \textnormal{#1}}}
+\newcommand{\degree}{^{\circ}} % Degrees
+\newcommand{\rad}{\unit{rad}} % Radians
+
+% > > > Operators
+\DeclareMathOperator{\oneg}{\raisebox{0.2em}{-}} % Negative Prefix Operator
+\DeclareMathOperator{\opos}{\raisebox{0.2em}{+}} % Postive Prefix Operator
+
+% > > > Highlighting
+\newcommand{\hl}[1]{\colorbox{\cnYellow}{#1}}
+\newcommand{\hlDarkBlack}[1]{\colorbox{\cnDarkBlack}{#1}}
+\newcommand{\hlBlack}[1]{\colorbox{\cnBlack}{#1}}
+\newcommand{\hlDarkGrey}[1]{\colorbox{\cnDarkGrey}{#1}}
+\newcommand{\hlGrey}[1]{\colorbox{\cnGrey}{#1}}
+\newcommand{\hlDivGrey}[1]{\colorbox{\cnDivGrey}{#1}}
+\newcommand{\hlLightGrey}[1]{\colorbox{\cnLightGrey}{#1}}
+\newcommand{\hlBGGrey}[1]{\colorbox{\cnBGGrey}{#1}}
+\newcommand{\hlAquaBlue}[1]{\colorbox{\cnAquaBlue}{#1}}
+\newcommand{\hlLightBlue}[1]{\colorbox{\cnLightBlue}{#1}}
+\newcommand{\hlBlue}[1]{\colorbox{\cnBlue}{#1}}
+\newcommand{\hlDarkBlue}[1]{\colorbox{\cnDarkBlue}{#1}}
+\newcommand{\hlRed}[1]{\colorbox{\cnRed}{#1}}
+\newcommand{\hlOrange}[1]{\colorbox{\cnOrange}{#1}}
+\newcommand{\hlGreen}[1]{\colorbox{\cnGreen}{#1}}
+\newcommand{\hlPurple}[1]{\colorbox{\cnPurple}{#1}}
+
+% > > > Highlighting
+\newcommand{\hlm}[1]{\colorbox{\cnYellow}{\ensuremath{#1}}}
+\newcommand{\hlmDarkBlack}[1]{\colorbox{\cnDarkBlack}{\ensuremath{#1}}}
+\newcommand{\hlmBlack}[1]{\colorbox{\cnBlack}{\ensuremath{#1}}}
+\newcommand{\hlmDarkGrey}[1]{\colorbox{\cnDarkGrey}{\ensuremath{#1}}}
+\newcommand{\hlmGrey}[1]{\colorbox{\cnGrey}{\ensuremath{#1}}}
+\newcommand{\hlmDivGrey}[1]{\colorbox{\cnDivGrey}{\ensuremath{#1}}}
+\newcommand{\hlmLightGrey}[1]{\colorbox{\cnLightGrey}{\ensuremath{#1}}}
+\newcommand{\hlmBGGrey}[1]{\colorbox{\cnBGGrey}{\ensuremath{#1}}}
+\newcommand{\hlmAquaBlue}[1]{\colorbox{\cnAquaBlue}{\ensuremath{#1}}}
+\newcommand{\hlmLightBlue}[1]{\colorbox{\cnLightBlue}{\ensuremath{#1}}}
+\newcommand{\hlmBlue}[1]{\colorbox{\cnBlue}{\ensuremath{#1}}}
+\newcommand{\hlmDarkBlue}[1]{\colorbox{\cnDarkBlue}{\ensuremath{#1}}}
+\newcommand{\hlmRed}[1]{\colorbox{\cnRed}{\ensuremath{#1}}}
+\newcommand{\hlmOrange}[1]{\colorbox{\cnOrange}{\ensuremath{#1}}}
+\newcommand{\hlmGreen}[1]{\colorbox{\cnGreen}{\ensuremath{#1}}}
+\newcommand{\hlmPurple}[1]{\colorbox{\cnPurple}{\ensuremath{#1}}}
+
+
+\newcommand{\defw}[1]{\cnordOne{\textbf{#1}}}
+\newcommand{\defsw}[1]{\cnordTen{[sv: \textit{#1}]}}
+\newcommand{\emphw}[1]{\cnordEleven{\textbf{#1}}}
+
+% > > > Delimiters
+\newcommand{\mpar}[1]{\left(#1\right)} % Parenthesis
+\newcommand{\sqpar}[1]{\left[#1\right]} % Square brackets
+
+% > > > Sets
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\suchthat}{\mathrel{}:\mathrel{}}
+
+% > > > Set of Integers
+\newcommand{\setN}{\ensuremath{\mathbb{N}}} % Set of Natural Numbers
+\newcommand{\setNs}{\ensuremath{\mathbb{N}^{*}}} % Non-Zero 
+\newcommand{\setNi}[1]{\ensuremath{\mathbb{N}_{#1}}} %  On interval
+
+\newcommand{\setW}{\ensuremath{\mathbb{W}}} % Set of Whole Numbers
+
+\newcommand{\setZ}{\ensuremath{\mathbb{Z}}} % Set of Integers
+\newcommand{\setZn}{\ensuremath{\mathbb{Z}^{-}}} % Negative
+\newcommand{\setZnn}{\ensuremath{\mathbb{Z}_{\ge 0}}} % Non-Negative
+\newcommand{\setZp}{\ensuremath{\mathbb{Z}^{+}}} % Positive
+\newcommand{\setZs}{\ensuremath{\mathbb{Z}^{*}}} % Non-Zero
+\newcommand{\setZi}[1]{\ensuremath{\mathbb{Z}_{#1}}} % On interval
+
+\newcommand{\setE}{\ensuremath{\mathbb{E}}} % Set of Even Integers
+\newcommand{\setO}{\ensuremath{\mathbb{O}}} % Set of Odd Integers
+
+\newcommand{\setP}{\ensuremath{\mathbb{P}}} % Set of Prime Integers
+
+\newcommand{\setT}{\ensuremath{\mathbb{T}}} % Set of Triangular Numbers
+
+\newcommand{\setSquares}{\ensuremath{\mathbb{Z}_{n^2}}} % Set of Square Numbers
+\newcommand{\setCubes}{\ensuremath{\mathbb{Z}_{n^3}}} % Set of Square Numbers
+
+\newcommand{\setF}{\ensuremath{\mathbb{F}}} % Set of a Field
+
+% > > > Set of Rationals
+\newcommand{\setQ}{\ensuremath{\mathbb{Q}}} % Set of Rationals
+\newcommand{\setQn}{\ensuremath{\mathbb{Q}^{-}}} %  Negative
+\newcommand{\setQp}{\ensuremath{\mathbb{Q}^{+}}} %  Postive 
+\newcommand{\setQs}{\ensuremath{\mathbb{Q}^{*}}} %  Non-Zero 
+\newcommand{\setQnn}{\ensuremath{\mathbb{Q}_{\ge 0}}} %  Non-Negative 
+\newcommand{\setQi}[1]{\ensuremath{\mathbb{Q}_{#1}}} %  On interval
+
+\newcommand{\setJ}{\ensuremath{\mathbb{J}}} % Set of Irrationals (not rational)
+\newcommand{\setJp}{\ensuremath{\mathbb{J}^{+}}} % Positive
+\newcommand{\setJs}{\ensuremath{\mathbb{J}_{*}}} % Non-Zero
+\newcommand{\setJn}{\ensuremath{\mathbb{J}^{-1}}} % Negative
+\newcommand{\setJnn}{\ensuremath{\mathbb{J}_{\ge 0}}} % Non-negative
+\newcommand{\setJi}[1]{\ensuremath{\mathbb{J}_{#1}}} % On Interval
+
+\newcommand{\rfrac}[2]{\left.{#1}\middle/{#2}\right.} % Solidus Fraction
+
+% > > > Set of Reals
+\newcommand{\setR}{\ensuremath{\mathbb{R}}} % Set of Reals
+\newcommand{\setRp}{\ensuremath{\mathbb{R}^{+}}} %  Positive 
+\newcommand{\setRn}{\ensuremath{\mathbb{R}^{-}}} %  Negative 
+\newcommand{\setRs}{\ensuremath{\mathbb{R}^{*}}} %  Non-Zero 
+\newcommand{\setRnn}{\ensuremath{\mathbb{R}_{\ge 0}}} %  Non-Negative  
+\newcommand{\setRi}[1]{\ensuremath{\mathbb{R}_{#1}}} % On Interval
+
+% > > > Set of Complex
+\newcommand{\setC}{\ensuremath{\mathbb{C}}} % Set of Complex 
+\newcommand{\setCp}{\ensuremath{\mathbb{C}^{+}}} % Positive 
+\newcommand{\setCn}{\ensuremath{\mathbb{C}^{-}}} % Negative 
+\newcommand{\setCs}{\ensuremath{\mathbb{C}^{*}}} % Non-Zero 
+
+\newcommand{\setI}{\ensuremath{\mathbb{I}}} % Set of Imaginary
+\newcommand{\setIp}{\ensuremath{\mathbb{I}^{+}}} % Positive 
+\newcommand{\setIn}{\ensuremath{\mathbb{I}^{-1}}} % Negative 
+\newcommand{\setIs}{\ensuremath{\mathbb{I}^{*}}} % Non-Zero 
+
+\renewcommand{\Im}{\textrm{Im}} % Imaginary Part
+\renewcommand{\Re}{\textrm{Re}} % Real Part
+
+% > > > Sets Probability
+\newcommand{\setU}{\ensuremath{\mathbb{U}}} % Universal Set
+\newcommand{\setS}{\ensuremath{\mathbb{S}}} % Sample Set
+\newcommand{\setComp}{\ensuremath{\mathcal{C}}} % Complement Set
+%\newcommand{\cis}{\textnormal{cis}} % CIS
+
+% Requires FONT AWESOME5 package
+\newcommand{\bdicei}{\text{\cDarkBlue{\faDiceOne}}}
+\newcommand{\bdiceii}{\text{\cDarkBlue{\faDiceTwo}}}
+\newcommand{\bdiceiii}{\text{\cDarkBlue{\faDiceThree}}}
+\newcommand{\bdiceiv}{\text{\cDarkBlue{\faDiceFour}}}
+\newcommand{\bdicev}{\text{\cDarkBlue{\faDiceFive}}}
+\newcommand{\bdicevi}{\text{\cDarkBlue{\faDiceSix}}}
+
+\newcommand{\abdicei}{\text{\cAquaBlue{\faDiceOne}}}
+\newcommand{\abdiceii}{\text{\cAquaBlue{\faDiceTwo}}}
+\newcommand{\abdiceiii}{\text{\cAquaBlue{\faDiceThree}}}
+\newcommand{\abdiceiv}{\text{\cAquaBlue{\faDiceFour}}}
+\newcommand{\abdicev}{\text{\cAquaBlue{\faDiceFive}}}
+\newcommand{\abdicevi}{\text{\cAquaBlue{\faDiceSix}}}
+
+\newcommand{\gdicei}{\text{\cGrey{\faDiceOne}}}
+\newcommand{\gdiceii}{\text{\cGrey{\faDiceTwo}}}
+\newcommand{\gdiceiii}{\text{\cGrey{\faDiceThree}}}
+\newcommand{\gdiceiv}{\text{\cGrey{\faDiceFour}}}
+\newcommand{\gdicev}{\text{\cGrey{\faDiceFive}}}
+\newcommand{\gdicevi}{\text{\cGrey{\faDiceSix}}}
+
+\newcommand{\rdicei}{\text{\cRed{\faDiceOne}}}
+\newcommand{\rdiceii}{\text{\cRed{\faDiceTwo}}}
+\newcommand{\rdiceiii}{\text{\cRed{\faDiceThree}}}
+\newcommand{\rdiceiv}{\text{\cRed{\faDiceFour}}}
+\newcommand{\rdicev}{\text{\cRed{\faDiceFive}}}
+\newcommand{\rdicevi}{\text{\cRed{\faDiceSix}}}
+
+\newcommand{\bcheads}{\text{\cDarkBlue{\faSmile}}}
+\newcommand{\bctails}{\text{\cDarkBlue{\faCrown}}}
+
+\newcommand{\abcheads}{\text{\cAquaBlue{\faSmile}}}
+\newcommand{\abctails}{\text{\cAquaBlue{\faCrown}}}
+
+\newcommand{\gcheads}{\text{\cGrey{\faSmile}}}
+\newcommand{\gctails}{\text{\cGrey{\faCrown}}}
+
+\newcommand{\rcheads}{\text{\cRed{\faSmile}}}
+\newcommand{\rctails}{\text{\cRed{\faCrown}}}
+
+\newcommand{\remarks}{\cRed{\faPen* \, Remark: \enskip}}
+\newcommand{\readas}{\cDarkBlue{\faBullhorn \, Read as: \enskip}}
+
+% > > > Sets Functions
+\newcommand{\setDomain}[1]{\textrm{dom}\mpar{#1}} % Domain Set
+\newcommand{\setCodomain}[1]{\textrm{cod}\mpar{#1}} % Codomain Set
+\newcommand{\setRange}[1]{\textrm{range}\mpar{#1}} % Range Set
+\newcommand{\setImage}[1]{\textrm{image}\mpar{#1}} % Image Set
+\newcommand{\setGraph}[1]{\textrm{graph}\mpar{#1}} % Graph Set
+
+% > > > Statistics
+\newcommand{\iqr}{\mathrm{IQR}}
+%\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu} % Change the width of overline by using a new command called overbar
+
+% Equations
+\newcommand{\crossm}{\prescript{\cRed{\nwarrow}}{\cBlue{\swarrow}}{=}^{\cBlue{\nearrow}}_{\cRed{\searrow}}} % Cross Multiplication
+\newcommand{\defeq}{\stackrel{\textup{\tiny def}}{=}} % Definition
+\newcommand{\deq}{\coloneqq} % Colon := Equation
+\newcommand{\cto}[1]{\cRed{\cancelto{1}{#1}}} % Cancel to
+\newcommand{\lj}[1]{&& \text{#1}} % Line Justification
+
+\newenvironment{eqsys}{\begin{equation*}\begin{dcases}}{\end{dcases}\end{equation*}} % Systems of Equations with dfrac support.
+
+% > > > Geometry
+\newcommand{\mangle}{\measuredangle}
+\newcommand{\lines}[1]{\overline{#1}}
+\newcommand{\liner}[1]{\overrightarrow{#1}}
+\newcommand{\linel}[1]{\overleftrightarrow{#1}}
+
+% > > > Functions
+\newcommand{\farg}[1]{\left[\cDarkBlue{#1}\right]} % Function Argument
+\newcommand{\fargr}[1]{\left[\cRed{#1}\right]} % Function Argument
+
+% > > > Absolute Value fix
+% https://tex.stackexchange.com/questions/43008/absolute-value-symbols
+%\delimitershortfall-1sp % Absolute Value
+%\newcommand\abs[1]{\left|#1\right|} %Absolute Value
+\DeclarePairedDelimiter\abs{\lvert}{\rvert} % Mathtools Absolute Value
+\DeclarePairedDelimiter\norm{\lVert}{\rVert} % Mathtools Normal Value
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+\newcommand{\lcm}{\mathrm{lcm}} % LCM
+\newcommand{\hcf}{\mathrm{hcf}} % HCF
+\newcommand{\inv}{^{-1}} % Inverse
+
+\newcommand{\ceil}[1]{\left \lceil #1 \right \rceil } % Ceiling Function
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor } % Floor Function
+
+% > > > Vectors
+%\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\hangle}[1]{\hat{#1}} % Component hat
+\newcommand{\ihat}{\hat{\imath}} % i hat
+\newcommand{\jhat}{\hat{\jmath}} % j hat
+\newcommand{\khat}{\hat{k}} % k hat
+
+% > > > Limits
+\newcommand{\limit}{\displaystyle\lim}
+\newcommand{\dstylim}[3]{\displaystyle \lim_{#1 \to #2} #3}
+
+% > > > Increasing & Decreasing Functions
+
+\newcommand{\cpoint}{\text{\faCopyright}} % Critical Point
+\newcommand{\decf}{\searrow} % Decreasing f
+\newcommand{\incf}{\nearrow} % Increasing f
+\newcommand{\stationary}{\rightarrow} % Stationary f
+\newcommand{\ccup}{\smile} % Concave up
+\newcommand{\ccdown}{\frown} % Concave down
+\newcommand{\checkcirc}{\text{\faCheckCircle}} % Check Circle
+
+% > > > Integration
+\newcommand{\ieval}[3]{\left. \left(#1\right)\right\rvert_{#2}^{#3}}
+
+% > > > Cell Background Colors 
+\newcommand{\cellyes}{\cellcolor{\cnLightGreen}Yes} % Cell YES
+\newcommand{\cellno}{\cellcolor{\cnLightRed}No} % Cell NO
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	GLOBAL UNITS
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\newcommand{\timg}[1]{\raisebox{-1\height}{#1}}
+\newcommand{\mimg}[1]{\raisebox{-0.5\height}{#1}}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	CUSTOM WORDS
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\newcommand{\mhobookname}{\uppercase\expandafter{Math\kern -1pt \lower .7ex\hbox{s}\kern -1pt Notes}}
+
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\endinput
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+% End of file `mhomacros.sty'.
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
