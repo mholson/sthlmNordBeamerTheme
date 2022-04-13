@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-    <img src="assets/nordsegel.png" width="800" max-width="90%" alt="Background" />
+    <img src="images/dark/Page 02.png" width="800" max-width="90%" alt="Background" />
 </p>
 
 ## Title Page
