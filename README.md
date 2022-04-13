@@ -22,7 +22,7 @@
 ## Color Palette
 
 <p align="center">
-    <img src="assets/nordcolorsdark.jpg" width="400" max-width="90%" alt="Background" /> <img src="assets/nordcolorslight.jpg" width="400" max-width="90%" alt="Background" />
+    <img src="images/dark/Page 13.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 13.png" width="45%" max-width="90%" alt="Background" />
 </p>
 
 
