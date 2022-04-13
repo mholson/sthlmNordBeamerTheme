@@ -94,7 +94,7 @@
 </p>
 
 <p align="center">
-    <img src="images/dark/Page 32.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 33.png" width="45%" max-width="90%" alt="Background" />
+    <img src="images/dark/Page 32.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 32.png" width="45%" max-width="90%" alt="Background" />
 </p>
 
 <p align="center">
