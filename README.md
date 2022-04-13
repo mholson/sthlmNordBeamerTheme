@@ -12,10 +12,10 @@
     <img src="images/dark/Page 02.png" width="800" max-width="90%" alt="Background" />
 </p>
 
-## Title Page
+## Light and Dark Mode Avaiable
 
 <p align="center">
-    <img src="assets/nordtitledark.jpg" width="45%" max-width="90%" alt="Background" /> <img src="assets/nordtitlelight.jpg" width="45%" max-width="90%" alt="Background" />
+    <img src="images/dark/Page 01.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 01.png" width="45%" max-width="90%" alt="Background" />
 
 </p>
 
