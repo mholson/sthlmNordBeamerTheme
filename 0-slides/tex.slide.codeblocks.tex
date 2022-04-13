@@ -1,0 +1,40 @@
+\documentclass[\string~/GitHub/sthlmNordBeamerTheme/sthlmNordLightDemo.tex]{subfiles}
+
+\begin{document}
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}[fragile, allowframebreaks]{Using Minted for Code Documentation}
+
+	It might be nice to include some inline code \mintinline{latex}|\documentclass[opt]{name}|
+
+	\begin{beamercodeblock}\vspace{-.6em}
+
+\begin{minted}{tex}
+\documentclass[opt]{name}
+\prob Solve the equation \( \cos x = \frac{1}{2} \) 
+for \( 0 \le x \le 2\pi \).
+
+\soln A fantastic solution will follow.
+\end{minted}
+	\end{beamercodeblock}
+	\beamercaptionblock{\textbf{Listing 1:} \LaTeX\ example}
+
+	\framebreak
+
+	\begin{beamercodeblock}\vspace{-.6em}
+\begin{minted}{python}
+import os
+import sys
+import subprocess
+import getpass
+from pathlib import Path
+import shortuuid
+from datetime import datetime
+from tabulate import tabulate
+\end{minted}
+	\end{beamercodeblock}
+	\beamercaptionblock{\textbf{Listing 2:} Python example}
+\end{frame}
+%   FRAME END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\end{document}
