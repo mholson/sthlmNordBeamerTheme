@@ -1,0 +1,178 @@
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+%             _             _
+%            | |           | |
+%  _ __ ___  | |__    ___  | | ___   ___   _ __       ___   ___   _ __ ___ 
+% | '_ ` _ \ | '_ \  / _ \ | |/ __| / _ \ | '_ \     / __| / _ \ | '_ ` _ \ 
+% | | | | | || | | || (_) || |\__ \| (_) || | | | _ | (__ | (_) || | | | | | 
+% |_| |_| |_||_| |_| \___/ |_||___/ \___/ |_| |_|(_) \___| \___/ |_| |_| |_| 
+%
+% Author: Mark H. Olson
+% Website: https://mholson.com
+% Github: https://github.com/mholson
+%
+% Updated: 2022-04-13
+% Created: 2015-07-31
+%
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% PREAMBLE :: sthlmNordLightDemo.tex 
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+% > > >	The following beamer class options are available
+%		aspectratio=169		Change aspect ratio to 16:9	
+%		sectionpages		Show section pages
+%		codehl				Use minted with a nord theme 
+%							(requires additional setup & Python installed)
+% 		enumarabic 			enumerated lists using arabic eg. 1.
+%							else alpha roman a) (i) 
+%
+% 		font sizes {8, 9, 10, 11, 12, 14, 17, 20} 11 Default
+%
+% > > > The following sthlmnord package options are available
+%		mode				= dark (default)
+%							= light
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\documentclass[aspectratio=169, sectionpages,codehl]{beamer}
+% > > > Bibliography File 
+\newcommand{\bibfilename}{mhoreferences.bib}
+% > > > Choose Theme
+%\usetheme[mode=light]{sthlmnord}
+\usetheme{sthlmnord}
+
+% > > > Generate some Lorem Ipsum placeholder text for the demo.
+\usepackage{lipsum}
+
+% > > >	Image File Paths
+% 		Here you can add one or more paths to where your images are being
+%		stored.  This will allow you to include only the image file 
+%		name when placing it into your document.
+%\graphicspath{{path1},{path2},{path3}}
+\graphicspath{{./assets/}} 
+
+% > > > Document Information
+\title{sthlmNord Beamer Theme (version 3.1)}
+\subtitle{Nord Inspired by Stockholm}
+\newcommand{\titleAuthor}{Created by}
+\author{mholson.com}
+\newcommand{\titleInstitute}{Institute}
+\institute{School in Stockholm}
+\newcommand{\titleMiscI}{Course}
+\newcommand{\course}{Courses Title Goes Here}
+\newcommand{\titleMiscII}{File}
+\newcommand{\filename}{\currfilebase}
+\date{\today}
+\titlegraphic{nordtitlelogolight}
+
+% > > > pdf customizations via hyperref (pkg installed by beamer)
+\hypersetup{
+%colorlinks=true,
+% You might want to disable color links for you final draft 
+% AND for colors to work properly where links are involved.
+colorlinks=false,
+linkcolor={nordNine},
+citecolor={nordNine},
+urlcolor={nordNine}
+}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%    DOCUMENT BEGINS HERE 
+%
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{document}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   TITLE START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\titlepage
+\subfile{0-slides/tex.slide.sthmlNordCover}
+%   TITLE END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   TABLE OF CONTENTS START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}
+	\frametitle{Table of contents}
+	% > > > For longer presentations use \tableofcontents[hideallsubsections] option
+	%		It is also possible to manually control the entries of the table of 
+	% 		contents by sections.
+	%\tableofcontents[sections={1-10}]
+	%\framebreak
+	%\tableofcontents[sections={11-15}]
+	\tableofcontents
+\end{frame}
+%   TABLE OF CONTENTS END   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% SECTION 
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Background Information}
+
+\subfile{0-slides/tex.slide.useMetroWarning}
+\subfile{0-slides/tex.slide.majorFeatures}
+\subfile{0-slides/tex.slide.history}
+\subfile{0-slides/tex.slide.noGuarantee}
+\subfile{0-slides/tex.slide.availableGitHub}
+\subfile{0-slides/tex.slide.ctanPackages}
+\subfile{0-slides/tex.slide.customPackages}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% SECTION 
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Colors}
+
+\subfile{0-slides/tex.slide.nordPaletteDark}
+\subfile{0-slides/tex.slide.nordPaletteTextDark}
+\subfile{0-slides/tex.slide.nordPaletteTextHighlightDark}
+
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% SECTION 
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Deck Structures}
+
+\subfile{0-slides/tex.slide.blocks}
+\subfile{0-slides/tex.slide.listsEnumerate}
+\subfile{0-slides/tex.slide.listsItemize}
+\subfile{0-slides/tex.slide.listsDescription}
+\subfile{0-slides/tex.slide.codeblocks}
+
+\subfile{0-slides/tex.slide.exampleSlide}
+\subfile{0-slides/tex.slide.theoremSlide}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% SECTION 
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Fonts}
+
+\subfile{0-slides/tex.slide.fonts}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% SECTION 
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{Mathematics}
+
+\subfile{0-slides/tex.slide.typeMathematics}
+\subfile{0-slides/tex.slide.tikz}
+\subfile{0-slides/tex.slide.mathExampleExpand}
+
+\subfile{0-slides/tex.slide.mathExampleCTS}
+\subfile{0-slides/tex.slide.mathExampleDiceCoins.tex}
+\subfile{0-slides/tex.slide.mathSets}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% SECTION 
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\section{References}
+
+\begin{frame}[allowframebreaks]{References}
+	\printbibliography[title={References}]%
+\end{frame}
+
+
+\end{document}
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+% END OF FILE
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
