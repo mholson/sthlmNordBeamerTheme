@@ -78,12 +78,12 @@ By default, theme will be displayed using dark mode; however, this can easily be
 <p align="center">
     <img src="images/dark/Page 24.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 24.png" width="45%" max-width="90%" alt="Background" />
 </p>
- Source code syntax highlighting can be toggled on by passing the codehl option to the documentclass command.  While minted should work out of the box, this theme includes the custom nord color  palette [https://github.com/sbrisard/nord_pygments](https://github.com/sbrisard/nord_pygments) , that needs to be installed (see github repository for instructions).
 
- If you do not want to install the pygements nord color theme, you can choose one of the installed themes by 
- changing the beamerthemesthlmnord.sty file 
- ```latex
- \RequirePackage{minted}
+Source code syntax highlighting can be toggled on by passing the `codehl` option to the documentclass command.  While minted should work out of the box, this theme includes the custom nord color  palette [https://github.com/sbrisard/nord_pygments](https://github.com/sbrisard/nord_pygments), that needs to be installed (see github repository for instructions).
+
+If you do not want to install the pygements nord color theme, you can choose one of the installed themes by changing the beamerthemesthlmnord.sty file 
+```latex
+\RequirePackage{minted}
 % > > > Nord style Requires custom install: https://github.com/sbrisard/nord_pygments
 \usemintedstyle{nord}  <====== Change to a default style 
 ```
