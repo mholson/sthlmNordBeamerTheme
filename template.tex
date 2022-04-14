@@ -1,0 +1,108 @@
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+%             _             _
+%            | |           | |
+%  _ __ ___  | |__    ___  | | ___   ___   _ __       ___   ___   _ __ ___ 
+% | '_ ` _ \ | '_ \  / _ \ | |/ __| / _ \ | '_ \     / __| / _ \ | '_ ` _ \ 
+% | | | | | || | | || (_) || |\__ \| (_) || | | | _ | (__ | (_) || | | | | | 
+% |_| |_| |_||_| |_| \___/ |_||___/ \___/ |_| |_|(_) \___| \___/ |_| |_| |_| 
+%
+% Author: Mark H. Olson
+% Website: https://mholson.com
+% Github: https://github.com/mholson
+%
+% Updated: 2022-04-14
+% Created: 2015-07-31
+%
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+% PREAMBLE :: template.tex 
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+% > > >	The following beamer class options are available
+%		aspectratio=169		Change aspect ratio to 16:9	
+%		bibref				Include bibliography
+%		sectionpages		Show section pages
+%		codehl				Use minted with a nord theme 
+%							(requires additional setup & Python installed)
+% 		enumarabic 			enumerated lists using arabic eg. 1.
+%							else alpha roman a) (i) 
+%
+% 		font sizes {8, 9, 10, 11, 12, 14, 17, 20} 11 Default
+%
+% > > > The following sthlmnord package options are available
+%		mode				= dark (default)
+%							= light
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\documentclass[aspectratio=169]{beamer}
+% > > > Bibliography File 
+%\newcommand{\bibfilename}{.bib}
+% > > > Choose Theme
+\usetheme[mode=light]{sthlmnord}
+%\usetheme{sthlmnord}
+
+% > > >	Image File Paths
+% 		Here you can add one or more paths to where your images are being
+%		stored.  This will allow you to include only the image file 
+%		name when placing it into your document.
+%\graphicspath{{path1},{path2},{path3}}
+\graphicspath{{./assets/}} 
+
+% > > > Document Information
+\title{sthlmNord Beamer Theme [version round(\(\pi, 2\))]}
+\subtitle{Nord Inspired by Stockholm}
+\newcommand{\titleAuthor}{Created by}
+\author{mholson.com}
+\newcommand{\titleInstitute}{Institute}
+\institute{School in Stockholm}
+\newcommand{\titleMiscI}{Course}
+\newcommand{\descMiscI}{Courses Title Goes Here}
+\newcommand{\titleMiscII}{File}
+\newcommand{\descMiscII}{\currfilebase}
+\date{\today}
+\titlegraphic{nordtitlelogolight}
+
+% > > > pdf customizations via hyperref (pkg installed by beamer)
+\hypersetup{
+%colorlinks=true,
+% You might want to disable color links for you final draft 
+% AND for colors to work properly where links are involved.
+colorlinks=false,
+linkcolor={nordNine},
+citecolor={nordNine},
+urlcolor={nordNine}
+}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%
+%    DOCUMENT BEGINS HERE 
+%
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{document}
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   TITLE START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\titlepage
+%   TITLE END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   TABLE OF CONTENTS START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}
+	\frametitle{Table of contents}
+	% > > > For longer presentations use \tableofcontents[hideallsubsections] option
+	%		It is also possible to manually control the entries of the table of 
+	% 		contents by sections.
+	%\tableofcontents[sections={1-10}]
+	%\framebreak
+	%\tableofcontents[sections={11-15}]
+	\tableofcontents
+\end{frame}
+%   TABLE OF CONTENTS END   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\end{document}
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+% END OF FILE
+%=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
