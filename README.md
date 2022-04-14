@@ -15,7 +15,7 @@
     <img src="images/dark/Page 02.png" width="800" max-width="90%" alt="Background" />
 </p>
 
-## Light and Dark Mode Avaiable
+## Light and Dark Mode Available
 
 <p align="center">
     <img src="images/dark/Page 01.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 01.png" width="45%" max-width="90%" alt="Background" />
@@ -46,14 +46,11 @@
     <img src="images/dark/Page 17.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 17.png" width="45%" max-width="90%" alt="Background" />
 </p>
 
-
-
 ## Block Environments
 
 <p align="center">
     <img src="images/dark/Page 19.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 19.png" width="45%" max-width="90%" alt="Background" />
 </p>
-
 
 ## Lists
 
@@ -101,4 +98,10 @@
     <img src="images/dark/Page 33.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 33.png" width="45%" max-width="90%" alt="Background" />
 </p>
 
+# Release Notes
 
+## Version round(pi,2)
+- enough decimal places to start rounding pi 
+- added document class boolean option `latex bibref` to make bibliography optional (default: false)
+
+## Version 3.1
