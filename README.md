@@ -19,8 +19,14 @@
 
 <p align="center">
     <img src="images/dark/Page 01.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 01.png" width="45%" max-width="90%" alt="Background" />
-
 </p>
+
+By default, theme will be displayed using dark mode; however, this can easily be toggled to the light version of the theme by providing an option to the `\usetheme{sthlmnord}` command,
+```latex 
+% > > > Choose Theme
+\usetheme[mode=light]{sthlmnord}
+%\usetheme{sthlmnord}
+```
 
 ## Major Features
 
@@ -102,6 +108,26 @@
 
 ## Version round(pi,2)
 - enough decimal places to start rounding pi 
-- added document class boolean option `latex bibref` to make bibliography optional (default: false)
+- added document class boolean option `bibref` to make bibliography optional (default: false)
+- simplified title page commands 
+- added release notes
+- updating readme file 
 
 ## Version 3.1
+- added working dark theme such that it works with light theme
+- created demo *.tex files for both the light and dark theme (slides included in /0-slides directory) 
+- included subfiles package into the theme
+- simplified cover page image
+- added document class boolean option `codehl` to include code highlighted blocks powered by the minted package and themed using nord_pygments, [https://github.com/sbrisard/nord_pygments](https://github.com/sbrisard/nord_pygments) (default: false)
+- added document class boolean option `enumarabic` to toggle between enumerated lists using (arabic, arabic) and (alpha, roman), (default: alpha, roman)
+- added custom color commands for both text and highlighted text
+- new title page inspired from [https://github.com/dennisog/beamer-purdue](https://github.com/dennisog/beamer-purdue) 
+- breaking change! mhomath.sty renamed to mhomacros.sty 
+- added example and theorem slides styled using awesomefont5 package
+- references now working 
+
+## Version 3.0
+- color theme now NORD inspired [https://www.nordtheme.com](https://www.nordtheme.com)
+- now complied using XeLaTeX as font changed to Libertinus using the libertinus-otf package
+- moving towards a light and dark mode version of the deck 
+  
