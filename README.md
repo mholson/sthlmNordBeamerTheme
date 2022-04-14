@@ -126,7 +126,7 @@ By default, theme will be displayed using dark mode; however, this can easily be
 - created demo *.tex files for both the light and dark theme (slides included in /0-slides directory) 
 - included subfiles package into the theme
 - simplified cover page image
-- added document class boolean option `codehl` to include code highlighted blocks powered by the minted package and themed using nord_pygments, [https://github.com/sbrisard/nord_pygments](https://github.com/sbrisard/nord_pygments) (default: false)
+- added document class boolean option `codehl` to include code highlighted blocks powered by the minted package and themed using nord pygments, [https://github.com/sbrisard/nord_pygments](https://github.com/sbrisard/nord_pygments) (default: false)
 - added document class boolean option `enumarabic` to toggle between enumerated lists using (arabic, arabic) and (alpha, roman), (default: alpha, roman)
 - added custom color commands for both text and highlighted text
 - new title page inspired from [https://github.com/dennisog/beamer-purdue](https://github.com/dennisog/beamer-purdue) 
