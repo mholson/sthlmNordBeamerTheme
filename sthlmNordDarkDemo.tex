@@ -10,8 +10,11 @@
 % Website: https://mholson.com
 % Github: https://github.com/mholson
 %
-% Updated: 2022-04-13
-% Created: 2015-07-31
+% Updated: 2022-04-13 Version 3.14
+% - added optional bibliography
+% - added template file
+% Updated: 2022-04-13 Version 3.1
+% Created: 2015-07-31 Version 3.0
 %
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
 
@@ -21,6 +24,7 @@
 %
 % > > >	The following beamer class options are available
 %		aspectratio=169		Change aspect ratio to 16:9	
+%		bibref				Include bibliography
 %		sectionpages		Show section pages
 %		codehl				Use minted with a nord theme 
 %							(requires additional setup & Python installed)
@@ -34,7 +38,7 @@
 %							= light
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-\documentclass[aspectratio=169, sectionpages,codehl]{beamer}
+\documentclass[aspectratio=169, sectionpages, codehl, bibref]{beamer}
 % > > > Bibliography File 
 \newcommand{\bibfilename}{mhoreferences.bib}
 % > > > Choose Theme
@@ -52,16 +56,16 @@
 \graphicspath{{./assets/}} 
 
 % > > > Document Information
-\title{sthlmNord Beamer Theme (version 3.1)}
+\title{sthlmNord Beamer Theme [version round(\(\pi, 2\))]}
 \subtitle{Nord Inspired by Stockholm}
 \newcommand{\titleAuthor}{Created by}
 \author{mholson.com}
 \newcommand{\titleInstitute}{Institute}
 \institute{School in Stockholm}
 \newcommand{\titleMiscI}{Course}
-\newcommand{\course}{Courses Title Goes Here}
+\newcommand{\descMiscI}{Courses Title Goes Here}
 \newcommand{\titleMiscII}{File}
-\newcommand{\filename}{\currfilebase}
+\newcommand{\descMiscII}{\currfilebase}
 \date{\today}
 \titlegraphic{nordtitlelogolight}
 

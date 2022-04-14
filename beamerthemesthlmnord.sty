@@ -55,6 +55,9 @@
 \newif\if@dosectionpages
 \@dosectionpagesfalse
 \DeclareOptionBeamer{sectionpages}{\@dosectionpagestrue}
+\newif\if@dobibref
+\@dobibreffalse
+\DeclareOptionBeamer{bibref}{\@dobibreftrue}
 \newif\if@doenumarabic
 \@doenumarabicfalse
 \DeclareOptionBeamer{enumarabic}{\@doenumarabictrue}
@@ -331,13 +334,15 @@
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   Bibliography
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\if@dobibref
 \RequirePackage{cleveref}
 \RequirePackage[backend=biber,style=numeric]{biblatex}
 %\setbeamertemplate{bibliography item}{
 % 	\usebeamercolor[bg]{primary}\insertbiblabel
 %}
 \addbibresource{\bibfilename}
-
+\else
+\fi
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -544,8 +549,8 @@
       \vspace{0pt}
       {\usebeamerfont{author title}\usebeamercolor*[fg]{author title}\titleAuthor: {\usebeamerfont{author}\usebeamercolor*[fg]{author}\insertauthor}}\\[0.2cm]
       {\usebeamerfont{institute title}\usebeamercolor*[fg]{institute title}\titleInstitute: {\usebeamerfont{institute}\usebeamercolor*[fg]{institute}\insertinstitute}}\\[0.2cm]
-      {\usebeamerfont{institute title}\usebeamercolor*[fg]{institute title}\titleMiscI: {\usebeamerfont{institute}\usebeamercolor*[fg]{institute}\course}}\\[0.2cm]
-      {\usebeamerfont{institute title}\usebeamercolor*[fg]{institute title}\titleMiscII: {\usebeamerfont{institute}\usebeamercolor*[fg]{institute}\filename}} \\[0.2cm]
+      {\usebeamerfont{institute title}\usebeamercolor*[fg]{institute title}\titleMiscI: {\usebeamerfont{institute}\usebeamercolor*[fg]{institute}\descMiscI}}\\[0.2cm]
+      {\usebeamerfont{institute title}\usebeamercolor*[fg]{institute title}\titleMiscII: {\usebeamerfont{institute}\usebeamercolor*[fg]{institute}\descMiscII}} \\[0.2cm]
       {\usebeamerfont{date}\usebeamercolor*[fg]{date}\XeLaTeX ed \ on \insertdate}
     \end{minipage}%
     \begin{minipage}[c]{0.2\paperwidth}
@@ -599,7 +604,6 @@
 \setbeamertemplate{subsection in toc}[box unnumbered]
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
 
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   Example Environment
