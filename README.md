@@ -15,6 +15,7 @@
     <img src="images/dark/Page 02.png" width="800" max-width="90%" alt="Background" />
 </p>
 ### Other Nord Beamer themes
+
 Maybe you were looking for another Nord Beamer theme?
 - [https://github.com/junwei-wang/beamerthemeNord](https://github.com/junwei-wang/beamerthemeNord)
 
