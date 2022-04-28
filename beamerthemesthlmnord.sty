@@ -346,6 +346,9 @@
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \if@dobibref
 \RequirePackage{cleveref}
+% https://tex.stackexchange.com/questions/266080/cleveref-hyperlink-not-working-in-beamer/266109#266109
+\let\chyperref\cref % Save the orginal command under a new name
+\renewcommand{\cref}[1]{\hyperlink{#1}{\chyperref{#1}}} % Redefine the \cref command and explictely add the hyperlink.
 \RequirePackage[backend=biber,style=numeric]{biblatex}
 %\setbeamertemplate{bibliography item}{
 % 	\usebeamercolor[bg]{primary}\insertbiblabel
