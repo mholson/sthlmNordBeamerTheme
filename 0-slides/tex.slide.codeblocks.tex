@@ -5,11 +5,32 @@
 %   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \begin{frame}[fragile, allowframebreaks]{Using Minted for Code Documentation}
 
+	The use of minted code highlighting can be activated by passing the 
+	codehl option to the documentclass
+\begin{beamercodeblock} \vspace{-.6em}
+
+	\begin{minted}{tex}
+\documentclass[codehl]{beamer}
+		\end{minted}
+	\end{beamercodeblock}
+	\begin{alertblock}{Warning}
+		The Nord color style used by pygments needs to be installed from:
+		\url{https://github.com/sbrisard/nord_pygments}
+	\end{alertblock}
+
+\end{frame}
+%   FRAME END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\begin{frame}[fragile, allowframebreaks]{Using Minted for Code Documentation}
+
 	It might be nice to include some inline code \mintinline{latex}|\documentclass[opt]{name}|
 
 	\begin{beamercodeblock}\vspace{-.6em}
 
-\begin{minted}{tex}
+		\begin{minted}{tex}
 \documentclass[opt]{name}
 \prob Solve the equation \( \cos x = \frac{1}{2} \) 
 for \( 0 \le x \le 2\pi \).
@@ -22,7 +43,7 @@ for \( 0 \le x \le 2\pi \).
 	\framebreak
 
 	\begin{beamercodeblock}\vspace{-.6em}
-\begin{minted}{python}
+		\begin{minted}{python}
 import os
 import sys
 import subprocess
