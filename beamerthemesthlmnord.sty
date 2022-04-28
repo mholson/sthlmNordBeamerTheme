@@ -146,7 +146,6 @@
 
   % > > >  Footnotes
   \setbeamercolor*{footnote mark}{fg=nordTen}
-  \setbeamercolor*{footnote}{fg=nordEight}
   \setbeamercolor*{footer}{fg=nordFive}
   \setbeamercolor*{footer text}{fg=nordFive}
   \setbeamercolor*{footnote book}{fg=nordEight}
@@ -246,7 +245,6 @@
 
     % > > >  Footnotes
     \setbeamercolor*{footnote mark}{fg=nordNine}
-    \setbeamercolor*{footnote}{fg=nordEight}
     \setbeamercolor*{footer}{fg=nordThree}
     \setbeamercolor*{footer text}{fg=nordThree}
     \setbeamercolor*{footnote book}{fg=nordEight}
@@ -410,7 +408,7 @@
 \setbeamerfont*{header subtitle}{size=\normalsize}
 \setbeamerfont*{toc title}{size=\normalsize,series=\bfseries}
 \setbeamerfont*{toc subtitle}{size=\small}
-\setbeamerfont*{footnote}{size=\fontsize{6}{6}}
+\setbeamerfont*{footline}{size=\fontsize{6}{6}}
 \setbeamerfont*{bibliography entry author}{size=\normalsize,series=\normalfont}
 \setbeamerfont*{bibliography entry title}{size=\normalsize,series=\bfseries}
 \setbeamerfont*{bibliography entry location}{size=\small,series=\normalfont}
@@ -490,9 +488,9 @@
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \hfuzz=\maxdimen % Remove warning hbox overfull (TODO) 
 \renewcommand\footnoterule{\color{nordThree!50}\hspace*{-0.5cm}\rule{0.95\paperwidth}{0.2pt}\vspace*{0.07cm}}
-\setbeamertemplate{footnote}{
+\setbeamertemplate{footnote}{%
   \begin{beamercolorbox}[wd=\textwidth, leftskip=0.3cm,rightskip=0.3cm]{footer text}%
-    {\usebeamerfont{footnote}{\usebeamercolor{footnotemark}\insertfootnotemark}{\usebeamercolor{footnotemark}\insertfootnotetext}}
+    {\usebeamerfont{footnote mark}{\usebeamercolor{footnote mark}\insertfootnotemark}{\insertfootnotetext}}
   \end{beamercolorbox}%
 }
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
