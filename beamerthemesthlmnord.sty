@@ -11,6 +11,7 @@
 % Website: https://mholson.com
 % Github: https://github.com/mholson
 %
+% Updated: 2022-04-28 > Version 3.141
 % Updated: 2022-04-11 > Version 3.1
 % Updated: 2021-08-21 > Version 3.0
 % Created: 2013-07-31
@@ -58,9 +59,6 @@
 \newif\if@dobibref
 \@dobibreffalse
 \DeclareOptionBeamer{bibref}{\@dobibreftrue}
-\newif\if@doenumarabic
-\@doenumarabicfalse
-\DeclareOptionBeamer{enumarabic}{\@doenumarabictrue}
 \newif\if@docodehl
 \@docodehlfalse
 \DeclareOptionBeamer{codehl}{\@docodehltrue}
@@ -147,7 +145,7 @@
   \setbeamercolor*{alerted text}{fg=nordEleven}
 
   % > > >  Footnotes
-  \setbeamercolor*{footnotemark}{fg=nordTen}
+  \setbeamercolor*{footnote mark}{fg=nordTen}
   \setbeamercolor*{footnote}{fg=nordEight}
   \setbeamercolor*{footer}{fg=nordFive}
   \setbeamercolor*{footer text}{fg=nordFive}
@@ -164,14 +162,20 @@
   \setbeamercolor*{frame mark}{fg=nordEight}
 
   % > > >  Lists
-  \setbeamercolor*{itemize item}{fg=nordTen}
-  \setbeamercolor*{itemize subitem}{fg=nordEight}
-  \setbeamercolor*{itemize subsubitem}{fg=nordSeven}
-  \setbeamercolor*{enumerate item}{fg=nordTen}
+  %\setbeamercolor*{itemize item}{fg=nordEight}
+  %\setbeamercolor*{itemize subitem}{fg=nordEight}
+  %\setbeamercolor*{itemize subsubitem}{fg=nordEight}
+  \setbeamertemplate{itemize item}{\cAquaBlue{\(\circledcirc\)}}
+  \setbeamertemplate{itemize subitem}{\cAquaBlue{\(\bullet\)}}
+  \setbeamertemplate{itemize subsubitem}{\cAquaBlue{\(\triangleright\)}}
+  \setbeamercolor*{enumerate item}{fg=nordEight}
   \setbeamercolor*{enumerate subitem}{fg=nordEight}
-  \setbeamercolor*{enumerate subsubitem}{fg=nordSeven}
-  \setbeamercolor*{description body begin}{fg=nordEight}
-  \setbeamercolor*{description item}{fg=nordTen}
+  \setbeamercolor*{enumerate subsubitem}{fg=nordEight}
+  \setbeamercolor*{description item}{fg=nordEight}
+  \setbeamercolor*{itemize/enumerate body}{fg=nordFive}
+  \setbeamercolor*{itemize/enumerate subbody}{fg=nordFive}
+  \setbeamercolor*{itemize/enumerate subsubbody}{fg=nordFive}
+  \setbeamercolor*{description body}{fg=nordFive}
 
   % > > >  Figures
   \setbeamercolor*{caption name}{fg=nordFour}
@@ -241,7 +245,7 @@
     \setbeamercolor*{alerted text}{fg=nordEleven}
 
     % > > >  Footnotes
-    \setbeamercolor*{footnotemark}{fg=nordNine}
+    \setbeamercolor*{footnote mark}{fg=nordNine}
     \setbeamercolor*{footnote}{fg=nordEight}
     \setbeamercolor*{footer}{fg=nordThree}
     \setbeamercolor*{footer text}{fg=nordThree}
@@ -257,15 +261,22 @@
     \setbeamercolor*{frame mark}{fg=nordEight}
 
     % > > >  Lists
-    \setbeamercolor*{itemize item}{fg=nordNine}
-    \setbeamercolor*{itemize subitem}{fg=nordEight}
-    \setbeamercolor*{itemize subsubitem}{fg=nordSeven}
-    \setbeamercolor*{enumerate item}{fg=nordZero}
-    \setbeamercolor*{enumerate subitem}{fg=nordZero}
-    \setbeamercolor*{enumerate subsubitem}{fg=nordZero}
-    \setbeamercolor*{description body begin}{fg=nordEight}
-    \setbeamercolor*{description item}{fg=nordZero}
-
+    %\setbeamercolor*{itemize item}{fg=nordTen}
+    %\setbeamercolor*{itemize subitem}{fg=nordTen}
+    %\setbeamercolor*{itemize subsubitem}{fg=Ten}
+    \setbeamertemplate{itemize item}{\cDarkBlue{\(\circledcirc\)}}
+    \setbeamertemplate{itemize subitem}{\cDarkBlue{\(\bullet\)}}
+    \setbeamertemplate{itemize subsubitem}{\cDarkBlue{\(\triangleright\)}}
+    \setbeamercolor*{enumerate item}{fg=nordTen}
+    \setbeamercolor*{enumerate subitem}{fg=nordTen}
+    \setbeamercolor*{enumerate subsubitem}{fg=nordTen}
+    \setbeamercolor*{description item}{fg=nordTen}
+    \setbeamercolor*{itemize/enumerate body}{fg=nordZero}
+    \setbeamercolor*{itemize/enumerate subbody}{fg=nordZero}
+    \setbeamercolor*{itemize/enumerate subsubbody}{fg=nordZero}
+    \setbeamercolor*{description body}{fg=nordZero}
+    
+   
     % > > >  Figures
     \setbeamercolor*{caption name}{fg=nordNine}
 
@@ -374,32 +385,6 @@
 \oldstylenums{\arabic{FancyVerbLine}}}}
 \else
 \fi
-
-%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%   Enumerated Lists
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\RequirePackage[shortlabels]{enumitem}
-\setlist[1]{labelindent=\parindent} % < Usually a good idea
-\setlist[itemize]{labelsep=1em, leftmargin=*}
-\setlist[itemize,1]{label=\(\cDarkBlue{\circledcirc}\)}
-\setlist[itemize,2]{label=\(\cDarkBlue{\bullet}\)}
-\setlist[itemize,3]{label=\(\cDarkBlue{\triangleright}\)}
-\setlist[enumerate]{labelsep=1em, leftmargin=1.5pc}
-\if@doenumarabic%
-  \setlist[enumerate,1]{label = \cDarkBlue{\arabic*.},
-    ref   = \arabic*}
-  \setlist[enumerate,2]{label = \cDarkBlue{\arabic*.},
-    ref   = \arabic*}
-\else%
-  \setlist[enumerate,1]{label = (\cDarkBlue{\alph*}),
-    ref   = \theenumi.\emph{\alph*}}
-  \setlist[enumerate,2]{label = \cDarkBlue{\roman*}),
-    ref   = \theenumii.\roman*}
-\fi%
-\setlist[description]{font=\sffamily\bfseries}
 
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
