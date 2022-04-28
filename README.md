@@ -119,6 +119,11 @@ If you do not want to install the pygements nord color theme, you can choose one
 
 # Release Notes
 
+## Version round(pi,3)
+- removed document class boolean option `enumarabic` to toggle between enumerated lists using (arabic, arabic) and (alpha, roman), (default: alpha, roman)
+- removed enumitem pgk as it does not play nicely with Beamer
+- updated styles for list environments
+
 ## Version round(pi,2)
 - enough decimal places to start rounding pi 
 - added document class boolean option `bibref` to make bibliography optional (default: false)
