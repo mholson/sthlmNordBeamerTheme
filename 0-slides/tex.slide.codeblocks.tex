@@ -7,10 +7,11 @@
 
 	The use of minted code highlighting can be activated by passing the 
 	codehl option to the documentclass
-
+	\begin{beamercodeblock}
 \begin{minted}{tex}
 \documentclass[codehl]{beamer}
 \end{minted}
+\end{beamercodeblock}
 	\begin{alertblock}{Warning}
 		The Nord color style used by pygments needs to be installed from:
 		\url{https://github.com/sbrisard/nord_pygments}
@@ -26,7 +27,7 @@
 
 	It might be nice to include some inline code \mintinline{latex}|\documentclass[opt]{name}|
 
-
+	\begin{beamercodeblock}
 \begin{minted}{tex}
 \documentclass[opt]{name}
 \prob Solve the equation \( \cos x = \frac{1}{2} \) 
@@ -34,9 +35,10 @@ for \( 0 \le x \le 2\pi \).
 
 \soln A fantastic solution will follow.
 \end{minted}
-
+	\end{beamercodeblock}
+	\beamercaptionblock{\textbf{Listing 1:} \LaTeX\ example}
 	\framebreak
-
+	\begin{beamercodeblock}
 \begin{minted}{python}
 import os
 import sys
@@ -47,6 +49,8 @@ import shortuuid
 from datetime import datetime
 from tabulate import tabulate
 \end{minted}
+	\end{beamercodeblock}
+	\beamercaptionblock{\textbf{Listing 2:} Python example}
 \end{frame}
 %   FRAME END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
