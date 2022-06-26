@@ -360,16 +360,12 @@
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   Code Highlighting Style
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\if@docodehl
 \RequirePackage{minted}
-% > > > Nord style Requires custom install: https://github.com/sbrisard/nord_pygments
-\usemintedstyle{nord} 
-
 \setminted{autogobble,xleftmargin=10pt}
 
 \newenvironment{beamercodeblock}[1][sep=.4em,leftskip=.6em]{%
     \vspace{\parskip}%
-    \begin{beamercolorbox}[#1]{sthmlnord_codeblock}
+    \begin{beamercolorbox}[#1]{sthmlnord_codeblock}%
 }{%
     \end{beamercolorbox}%
     \vspace{-1.5pt}
@@ -382,7 +378,13 @@
 
 % Line Numbers
 \renewcommand{\theFancyVerbLine}{\sffamily\textcolor{nordFour}{\scriptsize\oldstylenums{\arabic{FancyVerbLine}}}}
+
+\if@docodehl
+% > > > Nord style requires custom install: https://github.com/sbrisard/nord_pygments
+% > > > This style is NOT available on Overleaf.
+\usemintedstyle{nord} 
 \else
+\usemintedstyle{friendly}
 \fi
 
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
