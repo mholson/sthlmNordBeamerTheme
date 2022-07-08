@@ -119,6 +119,10 @@ If you do not want to install the pygements nord color theme, you can choose one
 
 # Release Notes
 
+## Version round(pi,4)
+- **breaking change!** The _codehl_ option has been renamed to _codeminted_.  The Listings pkg will now be the default code printer; however, if you would like to use the minted pkg, then you can provide the _codeminted_ option to the documentclass options.
+- moving towards support for use with overleaf.com
+
 ## Version round(pi,3)
 - removed document class boolean option `enumarabic` to toggle between enumerated lists using (arabic, arabic) and (alpha, roman), (default: alpha, roman)
 - removed enumitem pgk as it does not play nicely with Beamer
