@@ -78,13 +78,15 @@ By default, theme will be displayed using dark mode; however, this can easily be
 </p>
 
 
-## Source Code Syntax Highlighting powered by Minted
+## Source Code Syntax Highlighting powered by Listings (default) and Minted
 
 <p align="center">
     <img src="images/dark/Page 24.png" width="45%" max-width="90%" alt="Background" /> <img src="images/light/Page 24.png" width="45%" max-width="90%" alt="Background" />
 </p>
 
-Source code syntax highlighting can be toggled on by passing the `codehl` option to the documentclass command.  While minted should work out of the box, this theme includes the custom nord color  palette [https://github.com/sbrisard/nord_pygments](https://github.com/sbrisard/nord_pygments), that needs to be installed (see github repository for instructions).
+By default, source code printing is done using the listings package.  The reason is that it will be easier to style the code using Overleaf.com in the future.
+
+However, if you would like to use the minted package styled with nord, then just pass the `codeminted` option to the documentclass command.  While minted should work out of the box, this theme includes the custom nord color  palette [https://github.com/sbrisard/nord_pygments](https://github.com/sbrisard/nord_pygments), that needs to be installed (see github repository for instructions).
 
 If you do not want to install the pygements nord color theme, you can choose one of the installed themes by changing the beamerthemesthlmnord.sty file 
 ```latex
