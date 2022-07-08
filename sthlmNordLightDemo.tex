@@ -10,6 +10,11 @@
 % Website: https://mholson.com
 % Github: https://github.com/mholson
 %
+% Updated: 2022-07-08 > Version 3.1415
+% - porting for ease of use with overleaf.com
+% - changed code printing behavior by adding defautl support of listings pkg
+% while leaving support for custom minted pkg using codeminted documentclass
+% option
 % Updated: 2022-04-28 > Version 3.141
 % - fixed lists by removing enumitem package
 % Updated: 2022-04-13 Version 3.14
@@ -27,16 +32,16 @@
 %		aspectratio=169		Change aspect ratio to 16:9	
 %		bibref				Include bibliography
 %		sectionpages		Show section pages
-%		codehl				Use minted with a nord theme 
+%		codeminted			use minted pkg for code printing instead of listings
 %							(requires additional setup & Python installed)
-% 		font sizes {8, 9, 10, 11, 12, 14, 17, 20} 11 Default
+% 		font sizes 			{8, 9, 10, 11, 12, 14, 17, 20} 11 Default
 %
 % > > > The following sthlmnord package options are available
 %		mode				= dark (default)
 %							= light
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-\documentclass[aspectratio=169, sectionpages,codehl,bibref]{beamer}
+\documentclass[aspectratio=169,sectionpages,bibref]{beamer}
 % > > > Bibliography File 
 \newcommand{\bibfilename}{mhoreferences.bib}
 % > > > Choose Theme
@@ -56,7 +61,7 @@
 \usepackage{subfiles}
 
 % > > > Document Information
-\title{sthlmNord Beamer Theme [version round (pi, 3)]}
+\title{sthlmNord Beamer Theme [version round (pi, 4)]}
 \subtitle{Nord Inspired by Stockholm}
 \newcommand{\titleAuthor}{Created by}
 \author{mholson.com}
@@ -119,6 +124,7 @@ urlcolor={nordNine}
 \subfile{0-slides/tex.slide.history}
 \subfile{0-slides/tex.slide.noGuarantee}
 \subfile{0-slides/tex.slide.availableGitHub}
+\subfile{0-slides/tex.slide.availableOverleaf}
 \subfile{0-slides/tex.slide.ctanPackages}
 \subfile{0-slides/tex.slide.customPackages}
 

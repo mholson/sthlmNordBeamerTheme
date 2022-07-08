@@ -3,19 +3,20 @@
 \begin{document}
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\begin{frame}[fragile, allowframebreaks]{Using Minted for Code Documentation}
+\begin{frame}[fragile,allowframebreaks]{Using Listings Package for Code Printing}
 
-	The use of minted code highlighting can be activated by passing the 
-	codehl option to the documentclass
-	\begin{beamercodeblock}
-\begin{minted}{tex}
-\documentclass[codehl]{beamer}
-\end{minted}
-\end{beamercodeblock}
-	\begin{alertblock}{Warning}
-		The Nord color style used by pygments needs to be installed from:
-		\url{https://github.com/sbrisard/nord_pygments}
-	\end{alertblock}
+\begin{lstlisting}
+% testing
+\documentclass[opt]{name}
+\prob Solve the equation \( \cos x = \frac{1}{2} \)
+for \( 0 \le x \le 2\pi \).
+
+\soln A fantastic solution will follow.
+\end{lstlisting}
+
+\begin{alertblock}{Warning}
+  Breaking Change!  Listings is now used instead of Minted.
+\end{alertblock}
 \end{frame}
 
 %   FRAME END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -23,23 +24,9 @@
 
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\begin{frame}[fragile, allowframebreaks]{Using Minted for Code Documentation}
+\begin{frame}[fragile, allowframebreaks]{A Python Example}
 
-	It might be nice to include some inline code \mintinline{latex}|\documentclass[opt]{name}|
-
-	\begin{beamercodeblock}
-\begin{minted}{tex}
-\documentclass[opt]{name}
-\prob Solve the equation \( \cos x = \frac{1}{2} \) 
-for \( 0 \le x \le 2\pi \).
-
-\soln A fantastic solution will follow.
-\end{minted}
-	\end{beamercodeblock}
-	\beamercaptionblock{\textbf{Listing 1:} \LaTeX\ example}
-	\framebreak
-	\begin{beamercodeblock}
-\begin{minted}{python}
+\begin{lstlisting}[language={python}]
 import os
 import sys
 import subprocess
@@ -48,9 +35,7 @@ from pathlib import Path
 import shortuuid
 from datetime import datetime
 from tabulate import tabulate
-\end{minted}
-	\end{beamercodeblock}
-	\beamercaptionblock{\textbf{Listing 2:} Python example}
+\end{lstlisting}
 \end{frame}
 %   FRAME END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

@@ -11,6 +11,7 @@
 % Website: https://mholson.com
 % Github: https://github.com/mholson
 %
+% Updated: 2022-07-07 > Version 3.1415
 % Updated: 2022-04-28 > Version 3.141
 % Updated: 2022-04-11 > Version 3.1
 % Updated: 2021-08-21 > Version 3.0
@@ -274,7 +275,6 @@
     \setbeamercolor*{itemize/enumerate subsubbody}{fg=nordZero}
     \setbeamercolor*{description body}{fg=nordZero}
     
-   
     % > > >  Figures
     \setbeamercolor*{caption name}{fg=nordNine}
 
@@ -357,38 +357,6 @@
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%   Code Highlighting Style
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\RequirePackage{minted}
-\setminted{autogobble,xleftmargin=10pt}
-
-\newenvironment{beamercodeblock}[1][sep=.4em,leftskip=.6em]{%
-    \vspace{\parskip}%
-    \begin{beamercolorbox}[#1]{sthmlnord_codeblock}%
-}{%
-    \end{beamercolorbox}%
-    \vspace{-1.5pt}
-}
-\newcommand{\beamercaptionblock}[1]{%
-    \begin{beamercolorbox}[leftskip=.6em,sep=.4em]{sthmlnord_captionblock}%
-        #1
-    \end{beamercolorbox}
-}
-
-% Line Numbers
-\renewcommand{\theFancyVerbLine}{\sffamily\textcolor{nordFour}{\scriptsize\oldstylenums{\arabic{FancyVerbLine}}}}
-
-\if@docodehl
-% > > > Nord style requires custom install: https://github.com/sbrisard/nord_pygments
-% > > > This style is NOT available on Overleaf.
-\usemintedstyle{nord} 
-\else
-\usemintedstyle{friendly}
-\fi
-
-%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   FONTS
@@ -434,6 +402,19 @@
 \setbeamerfont{number in head/foot}{shape=\upshape}
 \setbeamerfont{section page}{series=\bfseries, shape=\upshape, size=\Large}
 \setbeamerfont{subsection page}{series=\bfseries, shape=\upshape, size=\normalsize}
+%  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%   Code Highlighting Style
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\RequirePackage{listings}
+\lstdefinestyle{mhotex}{%
+  language=[LaTeX]TeX,
+  keywordstyle=\bfseries\crAquaBlue,
+  commentstyle=\itshape\crBlue,
+}
+\lstset{escapechar=@, style=mhotex}
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
