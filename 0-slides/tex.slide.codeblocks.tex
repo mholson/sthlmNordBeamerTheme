@@ -5,14 +5,14 @@
 %   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \begin{frame}[fragile,allowframebreaks]{Using Listings Package for Code Printing}
 
-\begin{lstlisting}
+\begin{minted}{latex}
 % testing
 \documentclass[opt]{name}
 \prob Solve the equation \( \cos x = \frac{1}{2} \)
 for \( 0 \le x \le 2\pi \).
 
 \soln A fantastic solution will follow.
-\end{lstlisting}
+\end{minted}
 
 \begin{alertblock}{Warning}
   Breaking Change!  Listings is now used instead of Minted.
@@ -26,7 +26,7 @@ for \( 0 \le x \le 2\pi \).
 %   FRAME START   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 \begin{frame}[fragile, allowframebreaks]{A Python Example}
 
-\begin{lstlisting}[language={python}]
+\begin{minted}{latex}
 import os
 import sys
 import subprocess
@@ -35,7 +35,7 @@ from pathlib import Path
 import shortuuid
 from datetime import datetime
 from tabulate import tabulate
-\end{lstlisting}
+\end{minted}
 \end{frame}
 %   FRAME END   --==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

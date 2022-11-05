@@ -57,6 +57,12 @@
         \node[circle,draw,inner sep=1pt](char){\textsf{#1}};%
 \end{tikzpicture}}
 
+% > > > Red Circled character (used for referencing characteristics of plots)
+\newcommand\redCircled[1]{
+    \begin{tikzpicture}[baseline=(char.base)]%
+        \node[circle,draw,inner sep=1pt, color=nordEleven, fill=\nordEleven](char){\cLightGrey{\textsf{#1}}};%
+\end{tikzpicture}}
+
 % > > > Circled character (used for referencing characteristics of plots)
 \newcommand\swed{
     \begin{tikzpicture}[baseline=(char.base)]%
@@ -268,7 +274,7 @@
 \newcommand{\cto}[1]{\cRed{\cancelto{1}{#1}}} % Cancel to
 \newcommand{\lj}[1]{&& \text{#1}} % Line Justification
 
-\newenvironment{eqsys}{\begin{equation*}\begin{dcases}}{\end{dcases}\end{equation*}} % Systems of Equations with dfrac support.
+\newenvironment{syseqn}{\begin{equation*}\begin{dcases}}{\end{dcases}\end{equation*}} % Systems of Equations with dfrac support.
 
 % > > > Geometry
 \newcommand{\mangle}{\measuredangle}
@@ -277,6 +283,7 @@
 \newcommand{\linel}[1]{\overleftrightarrow{#1}}
 
 % > > > Functions
+\newcommand{\fargpass}[1]{\cDarkBlue{#1}} % Function Argument Pass
 \newcommand{\farg}[1]{\left[\cDarkBlue{#1}\right]} % Function Argument
 \newcommand{\fargr}[1]{\left[\cRed{#1}\right]} % Function Argument
 

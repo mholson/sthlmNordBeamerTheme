@@ -1,17 +1,13 @@
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
-%             _             _
-%            | |           | |
-%  _ __ ___  | |__    ___  | | ___   ___   _ __       ___   ___   _ __ ___
-% | '_ ` _ \ | '_ \  / _ \ | |/ __| / _ \ | '_ \     / __| / _ \ | '_ ` _ \
-% | | | | | || | | || (_) || |\__ \| (_) || | | | _ | (__ | (_) || | | | | |
-% |_| |_| |_||_| |_| \___/ |_||___/ \___/ |_| |_|(_) \___| \___/ |_| |_| |_|
+% BEAMER sthlmNord THEME
 %
 % File: beamerthemesthlmnord.sty
 % Author: Mark H. Olson
 % Website: https://mholson.com
 % Github: https://github.com/mholson
 %
-% Updated: 2022-07-07 > Version 3.1415
+% Updated: 2022-11-05 > Version 3.14159
+% Updated: 2022-07-08 > Version 3.1415
 % Updated: 2022-04-28 > Version 3.141
 % Updated: 2022-04-11 > Version 3.1
 % Updated: 2021-08-21 > Version 3.0
@@ -20,11 +16,11 @@
 % Description: sthml Beamer Theme 1.0 was originally heavily based on the 
 % hsrmbeamer theme (Benjamin Weiss) as a pdfLaTeX alternative.
 %
-% This theme is now primart based on the work of
+% This theme is now primarily based on the work of
 % Copyright (c) 2018 by P. Vanberg 
 % https://github.com/pvanberg/flux-beamer
 %
-% GNU General Publick Liscense Extended to this work.
+% GNU General Public License Extended to this work.
 % This program is free software: you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation, either version 3 of the License, or
@@ -54,19 +50,32 @@
 \mode<presentation>
 
 % > > > Document Class options
+% section pages are suppressed by default
+% use sectionpages option to enable them
 \newif\if@dosectionpages
 \@dosectionpagesfalse
 \DeclareOptionBeamer{sectionpages}{\@dosectionpagestrue}
+% bibliography is suppressed by default
+% use bibref option to enable it
 \newif\if@dobibref
 \@dobibreffalse
 \DeclareOptionBeamer{bibref}{\@dobibreftrue}
-\newif\if@docodehl
-\@docodehlfalse
-\DeclareOptionBeamer{codehl}{\@docodehltrue}
+% minted code highlighting is suppressed by default
+% until Overleaf provides the pygments update to provide
+% the nord color theme, two options will be available
+% minted
+\newif\if@docodeminted
+\@docodemintedfalse
+\DeclareOptionBeamer{codeminted}{\@docodemintedtrue}
+% overleaf
+\newif\if@docodemintedoverleaf
+\@docodemintedoverleaffalse
+\DeclareOptionBeamer{codemintedoverleaf}{\@docodemintedoverleaftrue}
+% dark mode version is default
+% this can be changed to light mode.
 \DeclareOptionBeamer{mode}{\def\beamer@sthlmnordtheme@mode{#1}}
 \ExecuteOptionsBeamer{mode=dark}  %Default Dark Mode
 \ProcessOptionsBeamer
-
 \def\beamer@sthlmnordtheme@darkmode{dark}
 \def\beamer@sthlmnordtheme@lightmode{light}
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -92,17 +101,18 @@
 % > > > Table Support 
 \NewTableCommand{\tablepagebreak}{\pagebreak}
 
-% > > > import EXAM cls support 
+% > > > EXAM cls EnvUplevel support so no need to copy past problems to create
+% a slide.
 \newenvironment{EnvUplevel}
-{\par\bigskip\vbox\bgroup
+{\par\bigskip\vbox\bgroup%
   % We set \leftskip to provide the correct left margin for whatever
   % is inside of the environment:
   \leftskip=\@totalleftmargin
-  \advance\leftskip-\leftmargin
-  % We adjust \@totalleftmargin (and linewidth?) in case there's a
+  \advance\leftskip-\leftmargin%
+  % We adjust \@totalleftmargin (and line width?) in case there's a
   % solution environment inside of the environment:
-  \advance\@totalleftmargin-\leftmargin
-  \advance\linewidth\leftmargin
+  \advance\@totalleftmargin-\leftmargin%
+  \advance\linewidth\leftmargin%
 }
 {\egroup\nobreak}
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -115,7 +125,7 @@
 
 \ifx\beamer@sthlmnordtheme@mode\beamer@sthlmnordtheme@darkmode%
 
-  % > > > For ease of reading switich Light (nord 9) and Dark (nord 10) Blue
+  % > > > For ease of reading switch Light (nord 9) and Dark (nord 10) Blue
   \definecolor{nordNine}{HTML}{5E81AC}        % nord10 -> nord9
   \definecolor{nordTen}{HTML}{81A1C1}         % nord9 -> nord10
   \definecolor{nordTwelve}{HTML}{BF616A}      % nord11 -> nord12
@@ -346,7 +356,7 @@
 \RequirePackage{cleveref}
 % https://tex.stackexchange.com/questions/266080/cleveref-hyperlink-not-working-in-beamer/266109#266109
 \let\chyperref\cref % Save the orginal command under a new name
-\renewcommand{\cref}[1]{\hyperlink{#1}{\chyperref{#1}}} % Redefine the \cref command and explictely add the hyperlink.
+\renewcommand{\cref}[1]{\hyperlink{#1}{\chyperref{#1}}} % Redefine the \cref command and explicitly add the hyperlink.
 \RequirePackage[backend=biber,style=numeric]{biblatex}
 %\setbeamertemplate{bibliography item}{
 % 	\usebeamercolor[bg]{primary}\insertbiblabel
@@ -361,7 +371,6 @@
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   FONTS
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-%\RequirePackage{microtype}
 \RequirePackage{textcomp}
 
 % > > > Whoa! Need a large font ... here it is!
@@ -408,13 +417,26 @@
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %   Code Highlighting Style
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-\RequirePackage{listings}
-\lstdefinestyle{mhotex}{%
-  language=[LaTeX]TeX,
-  keywordstyle=\bfseries\crAquaBlue,
-  commentstyle=\itshape\crBlue,
-}
-\lstset{escapechar=@, style=mhotex}
+\if@docodeminted
+\RequirePackage{minted}
+% > > > Using Nord styles included with as of Pygments Version 2.13.0
+% > > > DEPRICATED Nord style Requires custom install: https://github.com/sbrisard/nord_pygments
+% > > > DEPRICATED Custom install https://github.com/emprice/pygments-nord
+% > > > DEPRICATED Using Anaconda https://anaconda.org/conda-forge/python-build
+\usemintedstyle{nord-darker}
+\setminted{autogobble,xleftmargin=10pt,bgcolor=\cnDarkGrey}
+\else
+\fi
+\if@docodemintedoverleaf
+\RequirePackage{minted}
+% Until Overleaf updates Pygments to at least version 2.13.0, the vim
+% color style will be available.  Of course, you can change this by using
+% \usemintedstyle command and use a supported color theme:
+% https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted
+\usemintedstyle{vim}
+\setminted{autogobble,xleftmargin=10pt,bgcolor=\cnDarkGrey}
+\else
+\fi
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -427,15 +449,15 @@
 
 \setbeamertemplate{frametitle}
 {
-  \nointerlineskip
+  \nointerlineskip%
   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.2cm,ht=0.6cm,dp=0.25cm]{header primary}%
     {\usebeamercolor*[fg]{frame title}\usebeamerfont{header title}\insertframetitle}
-    \ifx\insertframesubtitle\empty
+    \ifx\insertframesubtitle\empty%
       \else {\usebeamercolor*[fg]{frame mark} {\small\faTerminal} }
       {\usebeamercolor*[fg]{frame subtitle}\usebeamerfont{header subtitle}\insertframesubtitle} \fi
     \hfill
   \end{beamercolorbox}%
-  \nointerlineskip
+  \nointerlineskip%
 }
 %  END =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

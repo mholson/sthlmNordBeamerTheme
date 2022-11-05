@@ -1,15 +1,12 @@
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
-%             _             _
-%            | |           | |
-%  _ __ ___  | |__    ___  | | ___   ___   _ __       ___   ___   _ __ ___ 
-% | '_ ` _ \ | '_ \  / _ \ | |/ __| / _ \ | '_ \     / __| / _ \ | '_ ` _ \ 
-% | | | | | || | | || (_) || |\__ \| (_) || | | | _ | (__ | (_) || | | | | | 
-% |_| |_| |_||_| |_| \___/ |_||___/ \___/ |_| |_|(_) \___| \___/ |_| |_| |_| 
-%
 % Author: Mark H. Olson
 % Website: https://mholson.com
 % Github: https://github.com/mholson
 %
+% Updated: 2022-11-05 > Version 3.14159
+% - adding support for minted nord color style from pygments
+% - deprecating default support for listings package
+% - initial Overleaf release
 % Updated: 2022-07-08 > Version 3.1415
 % - porting for ease of use with overleaf.com
 % - changed code printing behavior by adding default support of listings pkg
@@ -17,23 +14,25 @@
 % option
 % Updated: 2022-04-28 > Version 3.141
 % - fixed lists by removing enumitem package
-% Updated: 2022-04-13 Version 3.14
+% Updated: 2022-04-13 > Version 3.14
 % - added optional bibliography
 % - added template file
-% Created: 2015-07-31
+% Updated: 2022-04-13 Version 3.1
+% Created: 2015-07-31 Version 3.0
 %
 %=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
 
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-% PREAMBLE :: sthlmNordLightDemo.tex 
+% PREAMBLE :: sthlmNordLightDemo.tex
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 %
 % > > >	The following beamer class options are available
-%		aspectratio=169		Change aspect ratio to 16:9	
+%		aspectratio=169		Change aspect ratio to 16:9
 %		bibref				Include bibliography
 %		sectionpages		Show section pages
 %		codeminted			use minted pkg for code printing instead of listings
 %							(requires additional setup & Python installed)
+%		codemintedoverleaf	use minted pkg with color style support for Overleaf
 % 		font sizes 			{8, 9, 10, 11, 12, 14, 17, 20} 11 Default
 %
 % > > > The following sthlmnord package options are available
@@ -41,9 +40,9 @@
 %							= light
 %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-\documentclass[aspectratio=169,sectionpages,bibref]{beamer}
-% > > > Bibliography File 
-\newcommand{\bibfilename}{mhoreferences.bib}
+\documentclass[aspectratio=169, sectionpages, codemintedoverleaf, bibref]{beamer}
+% > > > Bibliography File
+\newcommand{\bibfilename}{mhoRef.bib}
 % > > > Choose Theme
 \usetheme[mode=light]{sthlmnord}
 %\usetheme{sthlmnord}
@@ -61,7 +60,7 @@
 \usepackage{subfiles}
 
 % > > > Document Information
-\title{sthlmNord Beamer Theme [version round (pi, 4)]}
+\title{sthlmNord Beamer Theme [version round (pi, 5)]}
 \subtitle{Nord Inspired by Stockholm}
 \newcommand{\titleAuthor}{Created by}
 \author{mholson.com}
@@ -78,7 +77,7 @@
 \hypersetup{
 %colorlinks=true,
 % You might want to disable color links for you final draft 
-% AND for colors to work properly where links are involved.
+% AND for colors to work properly where links are included.
 colorlinks=false,
 linkcolor={nordNine},
 citecolor={nordNine},
